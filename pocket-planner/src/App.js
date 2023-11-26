@@ -4,6 +4,7 @@ import LoginSignup from './components/LoginSignup/LoginSignup';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
+import RadioButton from './components/RadioButton/RadioButton';
 
 const test = false;
 
@@ -14,6 +15,7 @@ function App() {
       { test && <Signup/>}
       { test && <Login/>}
       { !test && <ForgotPassword/>}
+      { !test && <RadioButton options={[{ label: 'Option 1', value: 'first' }, { label: 'Option 2', value: 'second' }]} />}
     </div>
   );
 }
