@@ -1,0 +1,20 @@
+.input-box-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #eb0404;
+    border-radius: 15px;
+    width: 80%;
+  }
+  
+  .icon {
+    margin-right: 10px;
+    width: 20px; /* Adjust the width of the icon as needed */
+    height: auto;
+  }
+  
+  .input-box {
+    flex: 1;
+    border: none;
+    outline: none;
+  }
