@@ -31,7 +31,8 @@ const Signup = () => {
       </a>
       <h1 className='basic-header'>Sign Up</h1>
       <div className='top-text'>
-        Create Your Account and Streamline Your Travel Experience: Your Next Adventure Awaits!
+        Create Your Account and Streamline Your Travel Experience:
+        <span className='red-text'> Your Next Adventure Awaits!</span>
       </div>
       <h4 className='basic-h4'>Email</h4>
       <div className='inputbox-container'>
@@ -46,7 +47,8 @@ const Signup = () => {
       <InputBox icon={passwordIcon} placeholder="password" value={passwordInputValue} onChange={handlePasswordInputChange} type="password"/>
       </div>
       <div className='bottom-text'>
-        Already have an account? Login
+        Already have an account? 
+        <span className='red-text-underline' onClick={()=>{console.log("yolo")}}> Login</span>
       </div>
       <div className='button-container'>
       <GeneralButton label="Signup" onClick={()=>{console.log("fook")}} paddingTop="20px" paddingBottom="20px"/>
