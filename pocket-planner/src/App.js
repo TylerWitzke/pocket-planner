@@ -6,6 +6,7 @@ import Login from './components/Login/Login';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 // import RadioButton from './components/RadioButton/RadioButton';
 import Item from './components/Item/Item';
+import Browse from './components/Browse/Browse'
 
 const test = false;
 
@@ -17,7 +18,7 @@ function App() {
       { test && <Login/>}
       { test && <ForgotPassword/>}
       {/* { !test && <RadioButton options={[{ label: 'Option 1', value: 'first' }, { label: 'Option 2', value: 'second' }]} />} */}
-      { !test && <Item label="Test item" onClick={()=>{console.log("fook")}} paddingTop="200px" paddingBottom="20px"/>}
+      { !test && <Browse/>}
     </div>
   );
 }
