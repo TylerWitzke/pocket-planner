@@ -1,0 +1,23 @@
+/* Item.css */
+.item-container {
+    display: flex;
+    flex-direction: column; /* Stack the child elements vertically */
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+
+.item {
+padding: 10px 15px;
+font-size: 24px;
+font-weight: bold;
+cursor: pointer;
+background-color: #ff0000;
+color: #fff;
+border: none;
+border-radius: 4px;
+outline: none;
+font-family: 'Roboto', sans-serif;
+margin-bottom: 15px; /* Add some spacing between buttons */
+width: 100%
+}
