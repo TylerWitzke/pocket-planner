@@ -2,21 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import './Item.css'; // Import the CSS file
 
-const Item = ({ label, onClick, paddingBottom, paddingTop }) => {
+const Item = ({onClick, title, info, image}) => {
   return (
     <div
-    className="item-container"
-    style={{
-        paddingBottom: paddingBottom,
-        paddingTop: paddingTop
-      }}
-      >
-    <button
-      onClick={onClick}
-      className="item"
+        style={{
+        cursor: 'pointer',
+        padding: '10px',
+        border: '1px solid #ccc',
+        borderRadius: '5px',
+        marginBottom: '10px',
+        }}
+        onClick={onClick}
     >
-      {label}
-    </button>
+        <h3>{title}</h3>
+        {info && <p>{info}</p>}
+        {image && <img src={image} alt={title} style={{ maxWidth: '100%' }} />}
     </div>
   )
 }
