@@ -3,8 +3,9 @@
   display: flex;
   flex-direction: row; /* Ensure a horizontal layout */
   width: 85%; /* Adjust the width as needed */
-  border: 1px solid #ccc;
-  padding: 16px;
+  height: 150px;
+  border: 1px solid red;
+  padding: 5x;
   margin: 16px;
   border-radius: 8px;
   box-sizing: border-box;
@@ -20,9 +21,23 @@
 }
 
 .item-picture-style {
-  width: 30%; /* Take up 30% of the container width */
-  height: 100%; /* Take up the full container height */
+  width: 30%;
+  height: 40%;
+  padding: 10px;
   object-fit: cover;
   border-radius: 4px;
 }
 
+.item-title-style {
+  font-size: 18px;
+  margin: 3px;
+  margin-bottom: 6px;
+}
+
+.item-info-style {
+  font-size: 14px;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
