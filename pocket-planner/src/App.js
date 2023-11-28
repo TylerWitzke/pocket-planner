@@ -17,7 +17,7 @@ function App() {
       { test && <Signup/>}
       { test && <Login/>}
       { test && <ForgotPassword/>}
-      {/* { !test && <RadioButton options={[{ label: 'Option 1', value: 'first' }, { label: 'Option 2', value: 'second' }]} />} */}
+      {/* { test && <RadioButton options={[{ label: 'Option 1', value: 'first' }, { label: 'Option 2', value: 'second' }]} />} */}
       { !test && <Browse/>}
     </div>
   );
