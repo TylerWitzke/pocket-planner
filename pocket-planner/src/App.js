@@ -11,6 +11,8 @@ import Browse from './components/Browse/Browse'
 import ItemInfoScreen from './components/ItemInfoScreen/ItemInfoScreen';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BrowseItinerary from './components/BrowseItineraryScreen/BrowseItinerary';
+import EventConfirmationScreen from './components/EventConfirmationScreen/EventConfirmationScreen';
+import AttractionConfirmationScreen from './components/AttractionConfirmationScreen/AttractionConfirmationScreen';
 
 const test = false;
 
@@ -33,6 +35,8 @@ function App() {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/big-blue-ring" element={ItemInfoScreen} />
       <Route path="/BrowseItinerary" element={<BrowseItinerary/>} />
+      <Route path="/EventConfirmation" element={<EventConfirmationScreen/>} />
+      <Route path="/AttractionConfirmation" element={<AttractionConfirmationScreen/>} />
     </Routes>
   </Router>
   );

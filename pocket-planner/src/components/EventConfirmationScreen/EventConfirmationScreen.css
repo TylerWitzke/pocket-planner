@@ -1,0 +1,8 @@
+/* EventConfirmationScreen.css */
+
+.event-confirmation-screen-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
