@@ -1,0 +1,28 @@
+/* Item.css */
+.item-container-style {
+  display: flex;
+  flex-direction: row; /* Ensure a horizontal layout */
+  width: 85%; /* Adjust the width as needed */
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  cursor: pointer; /* Add a pointer cursor to indicate clickability */
+}
+
+.item-text-content-style {
+  flex: 1; /* Take up the remaining space */
+  display: flex;
+  flex-direction: column; /* Stack title and description vertically */
+  justify-content: flex-start; /* Align content to the start of the container */
+  margin-left: 16px, /* Add some space between the image and text content */
+}
+
+.item-picture-style {
+  width: 30%; /* Take up 30% of the container width */
+  height: 100%; /* Take up the full container height */
+  object-fit: cover;
+  border-radius: 4px;
+}
+
