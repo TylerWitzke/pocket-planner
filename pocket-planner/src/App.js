@@ -10,6 +10,7 @@ import Item from './components/Item/Item';
 import Browse from './components/Browse/Browse'
 import ItemInfoScreen from './components/ItemInfoScreen/ItemInfoScreen';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BrowseItinerary from './components/BrowseItineraryScreen/BrowseItinerary';
 
 const test = false;
 
@@ -31,6 +32,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/big-blue-ring" element={ItemInfoScreen} />
+      <Route path="/BrowseItinerary" element={<BrowseItinerary/>} />
     </Routes>
   </Router>
   );
