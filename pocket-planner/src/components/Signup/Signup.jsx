@@ -5,12 +5,27 @@ import emailIcon from '../assets/email_icon.png'
 import passwordIcon from '../assets/password_icon.png'
 import usernameIcon from '../assets/username_icon.png'
 import './Signup.css';
+import { useNavigate } from 'react-router'
 
 const Signup = () => {
 
   const [emailInputValue, setEmailInputValue] = useState('');
   const [passwordInputValue, setPasswordInputValue] = useState('');
   const [usernameInputValue, setUsernameInputValue] = useState('');
+
+  const navigate = useNavigate();
+
+  const redirectBack = () => {
+    navigate(-1);
+  };
+
+  const redirectToLogin = () => {
+    navigate('/login');
+  };
+
+  const redirectToHome = () => {
+    navigate('/');
+  };
 
   const handleEmailInputChange = (e) => {
     setEmailInputValue(e.target.value);
@@ -26,7 +41,7 @@ const Signup = () => {
 
   return (
     <div>
-      <a href="#" onClick={()=>{console.log("Go back")}}>
+      <a href="#" onClick={redirectBack}>
         Back
       </a>
       <h1 className='basic-header'>Sign Up</h1>
@@ -48,10 +63,10 @@ const Signup = () => {
       </div>
       <div className='bottom-text'>
         Already have an account? 
-        <span className='red-text-underline' onClick={()=>{console.log("yolo")}}> Login</span>
+        <span className='red-text-underline' onClick={redirectToLogin}> Login</span>
       </div>
       <div className='button-container'>
-      <GeneralButton label="Signup" onClick={()=>{console.log("fook")}} paddingTop="20px" paddingBottom="20px"/>
+      <GeneralButton label="Signup" onClick={redirectToHome} paddingTop="20px" paddingBottom="20px"/>
       </div>
     </div>
   )

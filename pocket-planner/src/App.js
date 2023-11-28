@@ -7,19 +7,29 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 // import RadioButton from './components/RadioButton/RadioButton';
 import Item from './components/Item/Item';
 import Browse from './components/Browse/Browse'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const test = false;
 
 function App() {
   return (
-    <div>
-      { test && <LoginSignup/>}
-      { test && <Signup/>}
-      { test && <Login/>}
-      { test && <ForgotPassword/>}
-      {/* { test && <RadioButton options={[{ label: 'Option 1', value: 'first' }, { label: 'Option 2', value: 'second' }]} />} */}
-      { !test && <Browse/>}
-    </div>
+    // <div>
+    //   { !test && <LoginSignup/>}
+    //   { test && <Signup/>}
+    //   { test && <Login/>}
+    //   { test && <ForgotPassword/>}
+    //   {/* { test && <RadioButton options={[{ label: 'Option 1', value: 'first' }, { label: 'Option 2', value: 'second' }]} />} */}
+    //   { test && <Browse/>}
+    // </div>
+
+    <Router>
+    <Routes>
+      <Route path="/" element={<LoginSignup />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+    </Routes>
+  </Router>
   );
 }
 

@@ -2,8 +2,23 @@ import React from 'react'
 import './LoginSignup.css'
 import GeneralButton from '../GeneralButton/GeneralButton'
 import pocketPlannerImage from '../assets/pocket-planner.png'
+import { useNavigate } from 'react-router'
 
 const LoginSignup = () => {
+  const navigate = useNavigate();
+
+  const redirectToLogin = () => {
+    navigate('/login');
+  };
+
+  const redirectToSignup = () => {
+    navigate('/signup');
+  };
+
+  const redirectToGuest = () => {
+    navigate('/login');
+  };
+
   return (
     <div className="outer-container">
     <img
@@ -12,8 +27,8 @@ const LoginSignup = () => {
         className="image"
       />
     <div className='button-container'>
-        <GeneralButton label="Login" onClick={()=>{console.log("fook")}} paddingTop="20px" paddingBottom="20px"/>
-        <GeneralButton label="Signup" onClick={()=>{console.log("fook")}} paddingTop="20px" paddingBottom="20px"/>
+        <GeneralButton label="Login" onClick={redirectToLogin} paddingTop="20px" paddingBottom="20px"/>
+        <GeneralButton label="Signup" onClick={redirectToSignup} paddingTop="20px" paddingBottom="20px"/>
         <GeneralButton label="Continue as Guest" onClick={()=>{console.log("fook")}} paddingTop="20px" paddingBottom="20px"/>
     </div>
     </div>

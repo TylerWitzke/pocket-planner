@@ -4,6 +4,7 @@ import passwordIcon from '../assets/password_icon.png'
 import emailIcon from '../assets/email_icon.png'
 import InputBox from '../InputBox/InputBox';
 import GeneralButton from '../GeneralButton/GeneralButton';
+import { useNavigate } from 'react-router'
 
 const ForgotPassword = () => {
     const first_message = "Recover your password if you have forgot the password!"
@@ -19,6 +20,7 @@ const ForgotPassword = () => {
     const [messageValue, setMessageValue] = useState(first_message);
     const [h4HeaderValue, setH4HeaderValue] = useState('Email');
     const [buttonTitle, setButtonTitle] = useState('Submit');
+    const navigate = useNavigate();
 
 
 
@@ -91,11 +93,11 @@ const ForgotPassword = () => {
     const buttonTitleSwitchHandler = (val) => {
         let result = ""
         switch (val) {
-            case 1: 
+            case 2: 
                 result = "Confirm";
                 break;
 
-            case 2: 
+            case 3: 
                 result = "Login";
                 break;
             
@@ -119,8 +121,7 @@ const ForgotPassword = () => {
             val++;
         }
         else {
-            setPageNumberValue(0);
-            val=0;
+            navigate('/login');
         }
 
         updateParameters(val)
@@ -133,8 +134,7 @@ const ForgotPassword = () => {
             val++;
         }
         else {
-            setPageNumberValue(0);
-            val=0;
+            navigate('/login');
         }
 
         updateParameters(val)

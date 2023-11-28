@@ -4,8 +4,23 @@ import GeneralButton from '../GeneralButton/GeneralButton';
 import passwordIcon from '../assets/password_icon.png'
 import usernameIcon from '../assets/username_icon.png'
 import './Login.css';
+import { useNavigate } from 'react-router';
 
 const Login = () => {
+
+  const navigate = useNavigate();
+
+  const redirectToMain = () => {
+    navigate('/');
+  };
+
+  const redirectToForgotPassword = () => {
+    navigate('/forgot-password');
+  };
+
+  const redirectToSignup = () => {
+    navigate('/signup');
+  };
     const [passwordInputValue, setPasswordInputValue] = useState('');
     const [usernameInputValue, setUsernameInputValue] = useState('');
 
@@ -21,9 +36,7 @@ const Login = () => {
     <div>
       <a
         href="#"
-        onClick={() => {
-          console.log("Go back");
-        }}
+        onClick={redirectToMain}
       >
         Back
       </a>
@@ -40,13 +53,13 @@ const Login = () => {
       <div className='inputbox-container'>
       <InputBox icon={passwordIcon} placeholder="password" value={passwordInputValue} onChange={handlePasswordInputChange} type="password"/>
       </div>
-      <a className='forgot-password' href="#" onClick={()=>{console.log("forgot passowrd")}}>Forgot Password?</a>
+      <a className='forgot-password' href="#" onClick={redirectToForgotPassword}>Forgot Password?</a>
       <div className='bottom-text'>
         Don't have an account? 
-        <span className='red-text-underline' onClick={()=>{console.log("yolo")}}> Register</span>
+        <span className='red-text-underline' onClick={redirectToSignup}> Register</span>
       </div>
       <div className='button-container'>
-      <GeneralButton label="Signup" onClick={()=>{console.log("fook")}} paddingTop="20px" paddingBottom="20px"/>
+      <GeneralButton label="Login" onClick={()=>{console.log("fook")}} paddingTop="20px" paddingBottom="20px"/>
       </div>
     </div>
   );
