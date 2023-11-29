@@ -10,6 +10,7 @@ import Item from './components/Item/Item';
 import Browse from './components/Browse/Browse'
 import ItemInfo from './components/ItemInfo/ItemInfo';
 import ItineraryItemInfo from './components/ItineraryItemInfo/ItineraryItemInfo';
+import SearchBar from './components/SearchBar/SearchBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BrowseItinerary from './components/BrowseItineraryScreen/BrowseItinerary';
 import EventConfirmationScreen from './components/EventConfirmationScreen/EventConfirmationScreen';
@@ -39,6 +40,7 @@ function App() {
       <Route path="/BrowseItinerary" element={<BrowseItinerary/>} />
       <Route path="/EventConfirmation" element={<EventConfirmationScreen/>} />
       <Route path="/AttractionConfirmation" element={<AttractionConfirmationScreen/>} />
+      <Route path="/search-bar" element={<SearchBar/>} />
       <Route path="/itinerary-item/:id" element={ItineraryItemInfo} />
       <Route path="/item-info/:type/:id" element={ItemInfo} />
     </Routes>

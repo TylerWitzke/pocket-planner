@@ -1,0 +1,27 @@
+.searchForm {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+  .searchInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-right: none; /* Remove the right border */
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .searchButton {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-left: none; /* Remove the left border */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  
