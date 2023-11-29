@@ -6,24 +6,28 @@ import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 //import RadioButton from './components/RadioButton/RadioButton';
-import Item from './components/Item/Item';
 import Browse from './components/Browse/Browse'
 import ItemInfoScreen from './components/ItemInfoScreen/ItemInfoScreen';
+import TestAddItem from './components/TestAddItem/TestAddItem';
+import TestMain from './components/TestMain/TestMain';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const test = false;
 
 function App() {
   return (
-    // <div>
-    //   { !test && <LoginSignup/>}
-    //   { test && <Signup/>}
-    //   { test && <Login/>}
-    //   { test && <ForgotPassword/>}
-    //   {/* { test && <RadioButton options={[{ label: 'Option 1', value: 'first' }, { label: 'Option 2', value: 'second' }]} />} */}
-    //   { test && <Browse/>}
-    // </div>
-
+    <div>
+      { test && <LoginSignup/>}
+      { test && <Signup/>}
+      { test && <Login/>}
+      { test && <ForgotPassword/>}
+      {/* { test && <RadioButton options={[{ label: 'Option 1', value: 'first' }, { label: 'Option 2', value: 'second' }]} />} */}
+      { test && <Browse/>}
+      { test && <ItemInfoScreen/>}
+      { test && <TestAddItem/>}
+      { !test && <TestMain/>}
+    </div>
+/*
     <Router>
     <Routes>
       <Route path="/" element={<LoginSignup />} />
@@ -32,7 +36,7 @@ function App() {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/big-blue-ring" element={ItemInfoScreen} />
     </Routes>
-  </Router>
+  </Router>*/
   );
 }
 
