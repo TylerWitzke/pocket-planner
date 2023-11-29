@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BrowseItinerary from './components/BrowseItineraryScreen/BrowseItinerary';
 import EventConfirmationScreen from './components/EventConfirmationScreen/EventConfirmationScreen';
 import AttractionConfirmationScreen from './components/AttractionConfirmationScreen/AttractionConfirmationScreen';
+import BasicDateCalendar from './components/BasicDateCalendar/BasicDateCalendar';
 
 
 
@@ -41,6 +42,7 @@ function App() {
       <Route path="/AttractionConfirmation" element={<AttractionConfirmationScreen/>} />
       <Route path="/itinerary-item/:id" element={ItineraryItemInfo} />
       <Route path="/item-info/:type/:id" element={ItemInfo} />
+      <Route path="/c" element={<BasicDateCalendar/>} />
     </Routes>
   </Router>
   );
