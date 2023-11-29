@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './ItineraryItemInfo.module.css';
 
-const ItineraryItemInfo = ({ name, location, contact, date, time, duration, onEdit, onDelete, onBackToMenu }) => {
+const ItineraryItemInfo = ({ name, location, contact, date, time, duration, image, onEdit, onDelete, onBackToMenu }) => {
   return (
     <div className={styles.container}>
       <button onClick={onBackToMenu} className={styles.backButton}>Back</button>
       <h1 className={styles.title}>{name}</h1>
+      {image && <img src={image} alt={name} className={styles.image} />}
       <div className={styles.info}>
         <div className={styles.detail}><strong>Location:</strong> {location}</div>
         <div className={styles.detail}><strong>Contact:</strong> {contact}</div>

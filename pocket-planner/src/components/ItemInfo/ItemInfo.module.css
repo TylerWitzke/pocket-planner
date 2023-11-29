@@ -12,6 +12,12 @@
     margin-bottom: 20px;
   }
   
+  .image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
   .description {
     margin-bottom: 20px;
     text-align: left;
