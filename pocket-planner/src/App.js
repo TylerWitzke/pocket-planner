@@ -8,11 +8,14 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 //import RadioButton from './components/RadioButton/RadioButton';
 import Item from './components/Item/Item';
 import Browse from './components/Browse/Browse'
-import ItemInfoScreen from './components/ItemInfoScreen/ItemInfoScreen';
+import ItemInfo from './components/ItemInfo/ItemInfo';
+import ItineraryItemInfo from './components/ItineraryItemInfo/ItineraryItemInfo';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BrowseItinerary from './components/BrowseItineraryScreen/BrowseItinerary';
 import EventConfirmationScreen from './components/EventConfirmationScreen/EventConfirmationScreen';
 import AttractionConfirmationScreen from './components/AttractionConfirmationScreen/AttractionConfirmationScreen';
+
+
 
 const test = false;
 
@@ -33,10 +36,11 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/big-blue-ring" element={ItemInfoScreen} />
       <Route path="/BrowseItinerary" element={<BrowseItinerary/>} />
       <Route path="/EventConfirmation" element={<EventConfirmationScreen/>} />
       <Route path="/AttractionConfirmation" element={<AttractionConfirmationScreen/>} />
+      <Route path="/itinerary-item/:id" element={ItineraryItemInfo} />
+      <Route path="/item-info/:type/:id" element={ItemInfo} />
     </Routes>
   </Router>
   );
