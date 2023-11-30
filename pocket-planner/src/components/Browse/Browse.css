@@ -1,7 +1,17 @@
-.outer-container {
+.browse-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 844px; /* Iphone 12 pro height */
+    overflow-y: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+li {
+    margin-bottom: 8px;
 }
