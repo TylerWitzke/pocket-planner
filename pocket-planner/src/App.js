@@ -42,7 +42,7 @@ function App() {
       <Route path="/EventConfirmation" element={<EventConfirmationScreen/>} />
       <Route path="/AttractionConfirmation" element={<AttractionConfirmationScreen/>} />
       <Route path="/search-bar" element={<SearchBar/>} />
-      <Route path="/itinerary-item/:id" element={ItineraryItemInfo} />
+      <Route path="/itineraryItem" element={<ItineraryItemInfo/>} />
       <Route path="/item-info/:type/:id" element={ItemInfo} />
       <Route path="/c" element={<BasicDateCalendar/>} />
     </Routes>
