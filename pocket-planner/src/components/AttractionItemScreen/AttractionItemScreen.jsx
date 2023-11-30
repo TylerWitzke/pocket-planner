@@ -20,9 +20,14 @@ const AttractionItemScreen = ({ onAddToItinerary }) => {
 
 
   return (
+    <div>
+    <a href="#" onClick={()=>{console.log("Go back")}}>
+        Back
+    </a>
     <div className="attraction-item-screen">
       <AttractionItem {...attractionData} />
       <GeneralButton label="Add to Itinerary" onClick={onAddToItinerary} paddingBottom="5px" paddingTop="5px" />
+    </div>
     </div>
   );
 };
