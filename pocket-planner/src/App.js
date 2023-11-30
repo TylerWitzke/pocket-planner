@@ -17,6 +17,7 @@ import EventConfirmationScreen from './components/EventConfirmationScreen/EventC
 import AttractionConfirmationScreen from './components/AttractionConfirmationScreen/AttractionConfirmationScreen';
 import BasicDateCalendar from './components/BasicDateCalendar/BasicDateCalendar';
 import AttractionItemScreen from './components/AttractionItemScreen/AttractionItemScreen';
+import EventItemScreen from './components/EventItemScreen/EventItemScreen';
 
 
 
@@ -47,6 +48,7 @@ function App() {
       <Route path="/item-info/:type/:id" element={ItemInfo} />
       <Route path="/c" element={<BasicDateCalendar/>} />
       <Route path="/attractionItemScreen" element={<AttractionItemScreen/>} />
+      <Route path="/eventItemScreen" element={<EventItemScreen/>} />
     </Routes>
   </Router>
   );
