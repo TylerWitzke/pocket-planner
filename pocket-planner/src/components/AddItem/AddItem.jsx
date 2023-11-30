@@ -45,7 +45,13 @@ const AddItem = ({ title, image }) => {
                 <Dropdown title="Minutes" list={minutes} />
             </div>
 
-            <GeneralButton label="Add Item" onClick={()=>{console.log("Navigate to item confirmation")}} paddingTop="120px"/>
+            <GeneralButton 
+                label="Add Item" 
+                onClick={()=>{console.log("Navigate to item confirmation")}} 
+                paddingTop="140px"
+                width="350px"
+                height="55px"
+                border="10px"/>
         </div>
     );
 };

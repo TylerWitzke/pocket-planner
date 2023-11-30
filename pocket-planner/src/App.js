@@ -10,6 +10,7 @@ import Browse from './components/Browse/Browse'
 import ItemInfoScreen from './components/ItemInfoScreen/ItemInfoScreen';
 import TestAddItem from './components/TestAddItem/TestAddItem';
 import TestMain from './components/TestMain/TestMain';
+import MainPage from './components/MainPage/MainPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const test = false;
@@ -26,6 +27,7 @@ function App() {
       { test && <ItemInfoScreen/>}
       { test && <TestAddItem/>}
       { !test && <TestMain/>}
+      { test && <MainPage/>}
     </div>
 /*
     <Router>

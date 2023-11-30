@@ -2,9 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import './Item.css'; // Import the CSS file
 
-const Item = ({onClick, title, info1, info2, info3, picture}) => {
+const Item = ({onClick, title, info1, info2, info3, picture, borderCol}) => {
+  const handleClick = (e) => {
+    e.stopPropagation(); // This will prevent the event from bubbling up to parent elements
+    onClick(); // Call the onClick handler passed to the Item
+  };
+
   return (
-    <div className='item-container-style' onClick={onClick}>
+    <div className='item-container-style' onClick={handleClick} style={{border: borderCol}}>
       <div className='item-text-content-style'>
         <h2 className='item-title-style'>{title}</h2>
         <p className='item-info-style'>{info1}</p>

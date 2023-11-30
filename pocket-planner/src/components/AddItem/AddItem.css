@@ -41,13 +41,13 @@
 
 /* Add top margin to the first paragraph to push it and the following content down */
 .p-top-margin {
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .back-link {
     position: absolute; /* Positions the link absolutely within the .AddItem-page-style div */
     left: 0; /* Aligns the link to the far left */
     top: 0; /* Aligns the link to the top */
-    margin-top: 50px;;
-    margin-left: 10px;;
+    margin-top: 50px;
+    margin-left: 10px;
 }

@@ -47,14 +47,14 @@
 .dropdown-list {
     max-height: 200px;
     overflow-y: auto; /* Scroll functionality */
-    background-color: #ff0000;
+    background-color: white;
 }
 
 .dropdown-item {
     padding: 10px;
     cursor: pointer;
     border-bottom: 1px solid #eee;
-    color: white;
+    color: black;
 }
 
 .dropdown-item:last-child {

@@ -1,0 +1,22 @@
+.outer-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 430px; /* Iphone 12 pro height */
+    border: 1px solid red;
+    border-radius: 25px;
+    margin-top: 20px;
+    cursor: pointer; /* Add this line to change the cursor on the entire container */
+}
+
+.outer-container:hover {
+    /* Define the cursor style when hovering over the outer-container */
+    cursor: pointer;
+}
+
+.outer-container h1 {
+    font-size: 18px;
+    margin-top: -30px;
+    margin-bottom: -5px;
+}
