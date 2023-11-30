@@ -16,6 +16,7 @@ import BrowseItinerary from './components/BrowseItineraryScreen/BrowseItinerary'
 import EventConfirmationScreen from './components/EventConfirmationScreen/EventConfirmationScreen';
 import AttractionConfirmationScreen from './components/AttractionConfirmationScreen/AttractionConfirmationScreen';
 import BasicDateCalendar from './components/BasicDateCalendar/BasicDateCalendar';
+import AttractionItemScreen from './components/AttractionItemScreen/AttractionItemScreen';
 
 
 
@@ -45,6 +46,7 @@ function App() {
       <Route path="/itineraryItem" element={<ItineraryItemInfo/>} />
       <Route path="/item-info/:type/:id" element={ItemInfo} />
       <Route path="/c" element={<BasicDateCalendar/>} />
+      <Route path="/attractionItemScreen" element={<AttractionItemScreen/>} />
     </Routes>
   </Router>
   );

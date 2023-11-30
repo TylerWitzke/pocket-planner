@@ -1,0 +1,67 @@
+/* AttractionItem.css */
+
+.attraction-item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+}
+
+.attraction-item-text-content {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.attraction-item-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.attraction-item-info {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-label {
+    margin-right: 5px;
+    color: black;
+}
+
+.attraction-item-picture-container {
+    display: flex;
+    justify-content: center;
+}
+
+.attraction-item-picture {
+    width: 350px;
+    height: 250px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.attraction-item-details-container {
+    width: 350px; /* Set the width to match the picture width */
+}
+
+.location-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 20px; /* Add padding-bottom for space after "16 km away" */
+}
+
+.location-details span {
+    margin-right: 5px;
+}
+
+.contact-hours-container {
+    /* Add padding-top for space after phone number and before "Hours:" */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+  
