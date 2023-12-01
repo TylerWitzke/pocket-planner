@@ -6,6 +6,7 @@ import calaway_attraction from '../assets/calaway_attraction.jpg'
 import ex_machina from '../assets/ex_machina.jpg'
 import SearchBar from '../SearchBar/SearchBar';
 import Browse from '../Browse/Browse';
+import { useNavigate } from 'react-router'
 
 const BrowseAttractions = () => {
     const itemInfoStampeders = {
@@ -37,13 +38,18 @@ const BrowseAttractions = () => {
 
     const items = [itemInfoStampeders,itemInfoCalaway,itemInfoExMachina]
 
+    const navigate = useNavigate();
+    const redirectBack = () => {
+        navigate(-1);
+    };
+
     const handleSearch = (searchTerm) => {
     console.log(`Searching for: ${searchTerm}`);
     };
 
     return (
         <div>
-            <a href="#" onClick={()=>{console.log("Go back")}}>
+            <a href="#" onClick={redirectBack}>
                 Back
             </a>
             <div className="browse-attraction-container">

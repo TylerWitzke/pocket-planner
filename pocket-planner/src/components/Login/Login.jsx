@@ -10,8 +10,8 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const redirectToMain = () => {
-    navigate('/');
+  const redirectBack = () => {
+    navigate(-1);
   };
 
   const redirectToForgotPassword = () => {
@@ -20,6 +20,10 @@ const Login = () => {
 
   const redirectToSignup = () => {
     navigate('/signup');
+  };
+
+  const redirectToMain = () => {
+    navigate('/main');
   };
     const [passwordInputValue, setPasswordInputValue] = useState('');
     const [usernameInputValue, setUsernameInputValue] = useState('');
@@ -36,7 +40,7 @@ const Login = () => {
     <div>
       <a
         href="#"
-        onClick={redirectToMain}
+        onClick={redirectBack}
       >
         Back
       </a>
@@ -59,7 +63,7 @@ const Login = () => {
         <span className='red-text-underline' onClick={redirectToSignup}> Register</span>
       </div>
       <div className='button-container'>
-      <GeneralButton label="Login" onClick={()=>{console.log("fook")}} paddingTop="20px" paddingBottom="20px"/>
+      <GeneralButton label="Login" onClick={redirectToMain} paddingTop="20px" paddingBottom="20px"/>
       </div>
     </div>
   );

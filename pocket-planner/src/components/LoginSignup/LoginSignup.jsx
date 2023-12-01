@@ -16,7 +16,7 @@ const LoginSignup = () => {
   };
 
   const redirectToGuest = () => {
-    navigate('/login');
+    navigate('/main');
 };
 
   return (
@@ -29,7 +29,7 @@ const LoginSignup = () => {
     <div className='button-container'>
         <GeneralButton label="Login" onClick={redirectToLogin} paddingTop="20px" paddingBottom="20px"/>
         <GeneralButton label="Signup" onClick={redirectToSignup} paddingTop="20px" paddingBottom="20px"/>
-        <GeneralButton label="Continue as Guest" onClick={()=>{console.log("fook")}} paddingTop="20px" paddingBottom="20px"/>
+        <GeneralButton label="Continue as Guest" onClick={redirectToGuest} paddingTop="20px" paddingBottom="20px"/>
     </div>
     </div>
   )

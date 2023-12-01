@@ -5,17 +5,23 @@ import GeneralButton from '../GeneralButton/GeneralButton';
 import { useNavigate } from 'react-router'
 
 const MainPage = ({items}) => {
-    /*
     const navigate = useNavigate();
     const redirectBack = () => {
-        navigate(-1);
+        navigate('/');
     };
-    */
+
+    const redirectToAttractions = () => {
+        navigate('/attractions');
+    };
+
+    const redirectToItinerary = () => {
+        navigate('/itinerary');
+    };
 
   return (
-    <div className="main-page-container">
-        <a href="#" onClick={console.log(/*redirectBack*/)} className="back-link">Back</a>
-        
+    <div>
+        <a href="#" onClick={redirectBack} className="back-link">Back</a>
+        <div className="main-page-container">
         <GeneralButton 
             className="general-button-style" 
             label="Events" 
@@ -37,7 +43,7 @@ const MainPage = ({items}) => {
         <GeneralButton 
             className="general-button-style" 
             label="Attractions" 
-            onClick={()=>{console.log("Go to attractions")}} 
+            onClick={redirectToAttractions} 
             paddingBottom="10px" 
             paddingTop="10px"
             height="40px"
@@ -46,9 +52,10 @@ const MainPage = ({items}) => {
 
         {/* For testing: <Browse/> */}
         <ItineraryWidget
-            onClick={()=>{console.log("Navigate to itinerary")}}
+            onClick={redirectToItinerary}
             items={items}
         />
+    </div>
     </div>
   );
 };
