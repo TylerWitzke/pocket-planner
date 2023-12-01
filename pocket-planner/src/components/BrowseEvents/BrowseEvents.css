@@ -1,6 +1,6 @@
-/* BrowseAttraction.css */
+/* BrowseEvents.css */
 
-.browse-attraction-container {
+.browse-event-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
