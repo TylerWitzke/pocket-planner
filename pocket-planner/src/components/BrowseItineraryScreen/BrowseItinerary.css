@@ -1,0 +1,32 @@
+/* BrowseItinerary.css */
+
+.browse-itinerary-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* padding */
+  }
+  
+  /* Styling for the header */
+  .itinerary-header {
+    color: black;
+    margin-bottom: 15px; 
+  }
+  
+  /* Styling for the subheadings */
+  .itinerary-subheading {
+    color: black;
+    margin-top: 15px; 
+  }
+
+  .item-picture-style {
+    /* Add styles for the image */
+    width: 40%;    /* Make the image take up 100% of the container's width */
+    height: 110%;   /* Maintain the aspect ratio */
+    max-height: 120px;  /* Set a maximum height to control the size of the image */
+    max-width: 190px;  /* Set a maximum height to control the size of the image */
+    padding: 10px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
