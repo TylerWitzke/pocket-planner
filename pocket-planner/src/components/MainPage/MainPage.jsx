@@ -4,23 +4,7 @@ import ItineraryWidget from '../ItineraryWidget/ItineraryWidget';
 import GeneralButton from '../GeneralButton/GeneralButton';
 import { useNavigate } from 'react-router'
 
-const MainPage = ({
-    onClickItem1,
-    titleItem1,
-    info1Item1,
-    info2Item1,
-    info3Item1,
-    pictureItem1,
-    borderColItem1,
-
-    onClickItem2,
-    titleItem2,
-    info1Item2,
-    info2Item2,
-    info3Item2,
-    pictureItem2,
-    borderColItem2
-}) => {
+const MainPage = ({items}) => {
     /*
     const navigate = useNavigate();
     const redirectBack = () => {
@@ -63,22 +47,7 @@ const MainPage = ({
         {/* For testing: <Browse/> */}
         <ItineraryWidget
             onClick={()=>{console.log("Navigate to itinerary")}}
-
-            onClickItem1={onClickItem1}
-            titleItem1={titleItem1}
-            info1Item1={info1Item1}
-            info2Item1={info2Item1}
-            info3Item1={info3Item1}
-            pictureItem1={pictureItem1}
-            borderColItem1={borderColItem1}
-
-            onClickItem2={onClickItem2}
-            titleItem2={titleItem2}
-            info1Item2={info1Item2}
-            info2Item2={info2Item2}
-            info3Item2={info3Item2}
-            pictureItem2={pictureItem2}
-            borderColItem2={borderColItem2}
+            items={items}
         />
     </div>
   );

@@ -6,11 +6,12 @@ import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 //import RadioButton from './components/RadioButton/RadioButton';
-import Browse from './components/Browse/Browse'
+import BrowseAttractions from './components/BrowseAttractions/BrowseAttractions';
 import ItemInfoScreen from './components/ItemInfoScreen/ItemInfoScreen';
 import TestAddItem from './components/TestAddItem/TestAddItem';
 import TestMain from './components/TestMain/TestMain';
-import MainPage from './components/MainPage/MainPage';
+import TestItemInfo from './components/TestItemInfo/TestItemInfo';
+import TestItineraryItemInfo from './components/TestItineraryItemInfo/TestItineraryItemInfo';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const test = false;
@@ -23,11 +24,12 @@ function App() {
       { test && <Login/>}
       { test && <ForgotPassword/>}
       {/* { test && <RadioButton options={[{ label: 'Option 1', value: 'first' }, { label: 'Option 2', value: 'second' }]} />} */}
-      { test && <Browse/>}
       { test && <ItemInfoScreen/>}
       { test && <TestAddItem/>}
       { !test && <TestMain/>}
-      { test && <MainPage/>}
+      { test && <BrowseAttractions/>}
+      { test && <TestItemInfo/>}
+      { test && <TestItineraryItemInfo/>}
     </div>
 /*
     <Router>

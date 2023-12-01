@@ -1,4 +1,4 @@
-// using this to test
+// Only using this for testing
 
 import React from 'react';
 import AddItem from '../AddItem/AddItem'
