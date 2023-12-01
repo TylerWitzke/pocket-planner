@@ -1,54 +1,81 @@
 .container {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px;
-    text-align: center;
-  }
-  
-  .title {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+  margin-top: 20px;
+  width: 80%;
+  max-width: 400px; 
+  text-align: center; 
+}
 
-  .description {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .info {
-    text-align: left;
-    margin-bottom: 20px;
-  }
-  
-  .detail {
-    margin-bottom: 10px;
-  }
-  
-  .backButton, .addButton {
-    cursor: pointer;
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    background-color: #008CBA; /* Blue */
-  }
-  
-  .addButton {
-    background-color: #4CAF50; /* Green */
-  }
-  
-  .backButton:hover, .addButton:hover {
-    opacity: 0.8;
-  }
-  
+.title {
+  color: #333;
+  text-align: center; 
+  font-size: 24px; 
+  font-weight: bold; 
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 100%; 
+  height: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+}
+
+.description {
+  color: #666; 
+  font-size: 1em; 
+  margin-bottom: 20px;
+  text-align: left; 
+}
+
+.info {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.detail {
+  font-size: 1em; 
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.backButton {
+  position: absolute;
+  top: 53px;
+  left: 140px; 
+  background-color: transparent; 
+  color: blue;
+  font-size: 0.85em; 
+  border: none;
+  border-radius: 15px; 
+  cursor: pointer;
+}
+
+.addButton {
+  background-color: red; 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 20px;
+  display: block; 
+  width: 100%; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.backButton:hover, .addButton:hover {
+  opacity: 0.8;
+}
+
+.container:after {
+  content: "";
+  display: block;
+  margin-bottom: 20px;
+}

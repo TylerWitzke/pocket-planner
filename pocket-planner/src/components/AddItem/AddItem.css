@@ -1,0 +1,52 @@
+.AddItem-page-style {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.AddItem-title-style {
+    /* Center the text and remove top margin to move it closer to the image */
+    text-align: center;
+    margin-top: 0;
+}
+
+.AddItem-image-style {
+    display: block;
+    margin: auto;
+    max-width: 100%; /* Ensures the image is not wider than its container */
+    height: auto; /* Keeps the aspect ratio intact */
+    width: 400px;
+    height: 300px;
+    object-fit: cover; /* This will cover the area without stretching the image */
+}
+
+.dropdown-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* This adds space between the dropdowns */
+}
+
+.dropdown-page-style .dropdown-title,
+.dropdown-page-style .dropdown-list-wrapper {
+    width: auto; /* Allows dropdowns to size according to their content */
+    flex-grow: 1; /* Dropdowns will grow to fill the space */
+}
+
+.AddItem-page-style p {
+    font-size: 20px;
+}
+
+/* Add top margin to the first paragraph to push it and the following content down */
+.p-top-margin {
+    margin-top: 40px;
+}
+
+.back-link {
+    position: absolute; /* Positions the link absolutely within the .AddItem-page-style div */
+    left: 0; /* Aligns the link to the far left */
+    top: 0; /* Aligns the link to the top */
+    margin-top: 50px;
+    margin-left: 10px;
+}
