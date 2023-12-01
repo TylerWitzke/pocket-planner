@@ -36,8 +36,8 @@ function App() {
     //   {/* { test && <RadioButton options={[{ label: 'Option 1', value: 'first' }, { label: 'Option 2', value: 'second' }]} />} */}
     //   { test && <TestAddItem/>}
     //   { test && <TestMain/>}
-    //   { test && <BrowseAttractions/>}
-    //   { !test && <TestItemInfo/>}
+    //   { !test && <BrowseAttractions/>}
+    //   { test && <TestItemInfo/>}
     //   { test && <TestItineraryItemInfo/>}
     // </div>
 
