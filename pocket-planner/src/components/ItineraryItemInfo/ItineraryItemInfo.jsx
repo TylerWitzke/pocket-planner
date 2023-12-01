@@ -1,21 +1,33 @@
+// ItineraryItemInfo.jsx
 import React from 'react';
-import styles from './ItineraryItemInfo.module.css';
+import GeneralButton from '../GeneralButton/GeneralButton'; // Import the GeneralButton component
+import ItineraryItem from '../ItineraryItem/ItineraryItem'; 
+import './ItineraryItemInfo.css'; // Import CSS file
+import calaway_attraction from '../assets/calaway_attraction.jpg'
 
-const ItineraryItemInfo = ({ name, location, contact, date, time, durationHr, durationMin, image, onEdit, onDelete, onBackToMenu }) => {
+const ItineraryItemInfo = ({ onEditDetails, onDeleteItem, onBackToMainMenu }) => {
+  const itineraryDetails = {
+    title: 'Calaway Park',
+    location: 'Calaway Park - 245033 Range Rd 33',
+    contact: '(403) 240-3822',
+    dateTime: 'Sunday, October 15th 9:30am',
+    duration: '3 hours 45 minutes',
+    picture: calaway_attraction, 
+  };
+
   return (
-    <div className={styles.container}>
-      <button onClick={onBackToMenu} className={styles.backButton}>Back</button>
-      <h1 className={styles.title}>{name}</h1>
-      {image && <img src={image} alt={name} className={styles.image} />}
-      <div className={styles.info}>
-        <div className={styles.detail}><strong>Location:</strong> {location}</div>
-        <div className={styles.detail}><strong>Contact:</strong> {contact}</div>
-        <div className={styles.detail}><strong>Date & Time:</strong> {date} {time}</div>
-        <div className={styles.detail}><strong>Duration:</strong> {durationHr} hours {durationMin} minutes</div>
+    <div>
+      <a href="#" onClick={() => { console.log("Go back") }}>
+        Back
+      </a>
+      <div className="itinerary-item-info-container">
+      <ItineraryItem {...itineraryDetails} />
+      
+      {/* Include GeneralButton components */}
+      <GeneralButton label="Edit this Item" onClick={onEditDetails} paddingBottom="5px" paddingTop="5px" />
+      <GeneralButton label="Delete this item" onClick={onDeleteItem} paddingBottom="5px" paddingTop="5px" />
+      <GeneralButton label="Back to Main Menu" onClick={onBackToMainMenu} paddingBottom="5px" paddingTop="5px" />
       </div>
-      <button onClick={onEdit} className={styles.editButton}>Edit this Item</button>
-      <button onClick={onDelete} className={styles.deleteButton}>Delete this Item</button>
-      <button onClick={onBackToMenu} className={styles.backToMenuButton}>Back to Main Menu</button>
     </div>
   );
 };
