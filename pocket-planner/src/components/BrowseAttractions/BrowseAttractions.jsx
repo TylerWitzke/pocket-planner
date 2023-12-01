@@ -54,8 +54,7 @@ const BrowseAttractions = () => {
               <SearchBar placeholder="Search..." onSearch={handleSearch} />
 
               <h2>Browse Example</h2>
-              <Browse items={items} height={"200px"} />
-
+              <Browse items={items} height={"450px"} />
             </div>
         </div>
       );
