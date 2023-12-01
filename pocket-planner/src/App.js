@@ -11,7 +11,6 @@ import Browse from './components/Browse/Browse'
 import ItemInfo from './components/ItemInfo/ItemInfo';
 import ItineraryItemInfo from './components/ItineraryItemInfo/ItineraryItemInfo';
 import SearchBar from './components/SearchBar/SearchBar';
-import ItemInfoScreen from './components/ItemInfoScreen/ItemInfoScreen';
 import TestAddItem from './components/TestAddItem/TestAddItem';
 import TestMain from './components/TestMain/TestMain';
 import TestItemInfo from './components/TestItemInfo/TestItemInfo';
@@ -35,10 +34,9 @@ function App() {
     //   { test && <Login/>}
     //   { test && <ForgotPassword/>}
     //   {/* { test && <RadioButton options={[{ label: 'Option 1', value: 'first' }, { label: 'Option 2', value: 'second' }]} />} */}
-    //   { test && <ItemInfoScreen/>}
     //   { test && <TestAddItem/>}
-    //   { !test && <TestMain/>}
-    //   { test && <BrowseAttractions/>}
+    //   { test && <TestMain/>}
+    //   { !test && <BrowseAttractions/>}
     //   { test && <TestItemInfo/>}
     //   { test && <TestItineraryItemInfo/>}
     // </div>

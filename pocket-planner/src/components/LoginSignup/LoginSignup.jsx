@@ -2,24 +2,21 @@ import React from 'react'
 import './LoginSignup.css'
 import GeneralButton from '../GeneralButton/GeneralButton'
 import pocketPlannerImage from '../assets/pocket-planner.png'
-// import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router'
 
 const LoginSignup = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const redirectToLogin = () => {
-    // navigate('/login');
-    console.log('Redirect to login');
+    navigate('/login');
   };
 
   const redirectToSignup = () => {
-    // navigate('/signup');
-    console.log('Redirect to signup');
+    navigate('/signup');
   };
 
   const redirectToGuest = () => {
-    // navigate('/login');
-    console.log('Redirect to guest');
+    navigate('/login');
 };
 
   return (
