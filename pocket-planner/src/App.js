@@ -16,6 +16,7 @@ import BrowseItinerary from './components/BrowseItineraryScreen/BrowseItinerary'
 import EventConfirmationScreen from './components/EventConfirmationScreen/EventConfirmationScreen';
 import AttractionConfirmationScreen from './components/AttractionConfirmationScreen/AttractionConfirmationScreen';
 import BasicDateCalendar from './components/BasicDateCalendar/BasicDateCalendar';
+import BrowseAttractions from './components/BrowseAttractions/BrowseAttractions';
 
 
 
@@ -39,6 +40,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/BrowseItinerary" element={<BrowseItinerary/>} />
+      <Route path="/BrowseAttractions" element={<BrowseAttractions/>} />
       <Route path="/EventConfirmation" element={<EventConfirmationScreen/>} />
       <Route path="/AttractionConfirmation" element={<AttractionConfirmationScreen/>} />
       <Route path="/search-bar" element={<SearchBar/>} />
