@@ -14,6 +14,8 @@ import AttractionConfirmationScreen from './components/AttractionConfirmationScr
 import BasicDateCalendar from './components/BasicDateCalendar/BasicDateCalendar';
 import BrowseAttractions from './components/BrowseAttractions/BrowseAttractions';
 import MainPage from './components/MainPage/MainPage';
+import EventItemScreen from './components/EventItemScreen/EventItemScreen'
+import AttractionItemScreen from './components/AttractionItemScreen/AttractionItemScreen'
 
 // Pictures
 import calgary_stampeders from './components/assets/stampeders_logo.png'
