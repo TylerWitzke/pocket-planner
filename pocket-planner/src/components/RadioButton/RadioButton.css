@@ -1,14 +1,16 @@
 /* RadioButton.css */
 
-.radioButtonContainer {
-    /* Apply Flexbox styles */
-    flex-direction: row;
-    align-items: center;
-    /* Add more styles as needed */
-  }
-  
-  .radioButtonContent {
-    /* Additional styles for the content inside the container */
-    padding: 10px;
-  }
-  
+/* RadioButton.css */
+.radio-button {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0; /* Optional: Add margin for spacing around the group */
+}
+
+.radio-button-label {
+  text-align: center;
+  /* display: flex;
+  align-items: center;
+  flex-direction: column; */
+  /* margin-right: 10px; Optional: Adjust the margin between each label and radio button */
+}

@@ -8,9 +8,10 @@ import SearchBar from '../SearchBar/SearchBar';
 import Browse from '../Browse/Browse';
 import { useNavigate } from 'react-router'
 import { attraction_items } from '../../Constants';
+import RadioButton from '../RadioButton/RadioButton'
 
 const BrowseAttractions = () => {
-    
+
 
     const navigate = useNavigate();
     const redirectBack = () => {
@@ -31,14 +32,22 @@ const BrowseAttractions = () => {
                 Back
             </a>
             <div className="browse-attraction-container">
-              {/* Header */}
-              <h2>Attractions</h2>
+            <h1>Attractions</h1>
+                <RadioButton
+                options={[
+                { value: 'option1', label: 'All' },
+                { value: 'option2', label: 'Nearby' },
+                { value: 'option3', label: 'Top Rated' },
+                { value: 'option4', label: 'Popular' },
+                ]}
+                onChange={(selectedOption) => {
+                console.log('Selected option:', selectedOption);
+                // Need to add logic here
+                }}
 
-              {/* Search Bar */}
-              <SearchBar placeholder="Search..." onSearch={handleSearch} />
-
-              <h2>Browse Example</h2>
-              <Browse items={attraction_items} height={"450px"} onClick={routeToAttractionScreen}/>
+                />
+                <SearchBar placeholder="Search for attractions..." onSearch={handleSearch} />
+                <Browse items={attraction_items} height={"520px"} onClick={routeToAttractionScreen}/>
             </div>
         </div>
       );

@@ -7,6 +7,7 @@ import ex_machina from '../assets/ex_machina.jpg'
 import SearchBar from '../SearchBar/SearchBar';
 import Browse from '../Browse/Browse';
 import { useNavigate } from 'react-router'
+import RadioButton from '../RadioButton/RadioButton'
 
 const BrowseAmenities = () => {
     const navigate = useNavigate();
@@ -52,14 +53,22 @@ const BrowseAmenities = () => {
                 Back
             </a>
             <div className="browse-amenities-container">
-              {/* Header */}
-              <h2>Amenities</h2>
+              <h1>Amenities</h1>
 
-              {/* Search Bar */}
-              <SearchBar placeholder="Search..." onSearch={handleSearch} />
-
-              <h2>Browse Amenities Example</h2>
-              <Browse items={items} height={"450px"} />
+              <RadioButton
+                options={[
+                { value: 'option1', label: 'All' },
+                { value: 'option2', label: 'Nearby' },
+                { value: 'option3', label: 'Top Rated' },
+                { value: 'option4', label: 'Popular' },
+                ]}
+                onChange={(selectedOption) => {
+                 console.log('Selected option:', selectedOption);
+                 // Need to add logic here
+                }}
+              />
+              <SearchBar placeholder="Search for amenities..." onSearch={handleSearch} />
+              <Browse items={items} height={"520px"} />
             </div>
         </div>
       );
