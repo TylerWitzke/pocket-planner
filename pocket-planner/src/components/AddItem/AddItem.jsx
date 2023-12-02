@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState }from 'react';
 import './AddItem.css';
 import Dropdown from '../Dropdown/Dropdown';
 import GeneralButton from '../GeneralButton/GeneralButton';
@@ -16,7 +16,14 @@ const years = ["Year", ...Array.from({ length: 10 }, (_, i) => currentYear + i)]
 const hours = ["Hours", ...Array.from({ length: 24 }, (_, i) => i + "hr")];
 const minutes = ["Minutes", ...Array.from({ length: 60 }, (_, i) => i + "min")];
 
+export let expday =''
+
 const AddItem = ({ title, image }) => {
+    const [month, setMonth] = useState('');
+    const [day, setDay] = useState('');
+    const [year, setYear] = useState('');
+    const [hours, setHours] = useState('');
+    const [minutes, setMinutes] = useState('');
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const index = queryParams.get('itemid');
@@ -24,6 +31,11 @@ const AddItem = ({ title, image }) => {
     const redirectBack = () => {
         navigate(-1);
     };
+
+    const onSubmit = () => {
+        expday = day;
+        navigate('/attractionconfirmation')
+    }
 
     return (
         <div className="AddItem-page-style">
@@ -36,21 +48,21 @@ const AddItem = ({ title, image }) => {
             <p className="p-top-margin">When do you want get to {attraction_items[parseInt(index, 10)].title}?</p>
 
             <div className="dropdown-group">
-                <Dropdown title="Month" list={months}/>
-                <Dropdown title="Day" list={days}/>
-                <Dropdown title="Year" list={years}/>
+                <Dropdown title="Month" list={months} updateState={setMonth}/>
+                <Dropdown title="Day" list={days} updateState={setDay}/>
+                <Dropdown title="Year" list={years} updateState={setYear}/>
             </div>
 
             <p>How long will you be at {attraction_items[parseInt(index, 10)].title}?</p>
 
             <div className="dropdown-group">
-                <Dropdown title="Hours" list={hours}/>
-                <Dropdown title="Minutes" list={minutes} />
+                <Dropdown title="Hours" list={hours} updateState={setHours}/>
+                <Dropdown title="Minutes" list={minutes} updateState={setMinutes}/>
             </div>
 
             <GeneralButton 
                 label="Add Item" 
-                onClick={()=>{console.log("Navigate to item confirmation")}} 
+                onClick={onSubmit} 
                 paddingTop="140px"
                 width="350px"
                 height="55px"

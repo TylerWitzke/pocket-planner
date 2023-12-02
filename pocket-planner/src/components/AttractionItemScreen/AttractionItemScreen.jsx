@@ -11,15 +11,6 @@ import { useLocation } from 'react-router-dom';
 
 
 const AttractionItemScreen = ({ onAddToItinerary }) => {
-  const attractionData = {
-    title: 'Big Blue Ring',
-    picture: blue_ring_attraction,
-    description: 'Gorgeous massive blue ring. It only took $471,000 to construct this masterpiece. Referred to as Calgary’s pride and joy by locals.',
-    locationName: 'Deerfoot Trail',
-    locationDistance: '16 km away',
-    contact: '(403)-111-222',
-    hours: 'Open 24 hours',
-  };
 
   const navigate = useNavigate();
   const location = useLocation();

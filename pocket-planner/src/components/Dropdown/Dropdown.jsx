@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Dropdown.css';
 
-const Dropdown = ({ title, list }) => {
+const Dropdown = ({ title, list, updateState }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(title);
 
@@ -9,6 +9,7 @@ const Dropdown = ({ title, list }) => {
 
     const handleItemClick = (item) => {
         setSelectedItem(item);
+        updateState(item);
         setIsOpen(false);
     };
 

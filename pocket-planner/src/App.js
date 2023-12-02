@@ -71,7 +71,7 @@ function App() {
       <Route path="/events" element={<BrowseEvents/>} />
       <Route path="/amenities" element={<BrowseAmenities/>} />
       <Route path="/EventConfirmation" element={<EventConfirmationScreen/>} />
-      <Route path="/AttractionConfirmation" element={<AttractionConfirmationScreen/>} />
+      <Route path="/attractionconfirmation" element={<AttractionConfirmationScreen/>} />
       <Route path="/search-bar" element={<SearchBar/>} />
       <Route path="/itineraryItem" element={<ItineraryItemInfo/>} />
       <Route path="/item-info/:type/:id" element={ItemInfo} />
