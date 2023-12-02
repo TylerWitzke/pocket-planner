@@ -12,13 +12,22 @@ const EventItemScreen = ({ onAddToItinerary }) => {
     location: 'Scotiabank Saddledome',
   };
 
+  const itemInfoItinerary2 = {
+    title: 'Calgary Hitmen', 
+    picture: calgaryflamescanucks,
+    date: 'Tuesday, October 24th 7:30pm',
+    location: 'Scotiabank Saddledome',
+  };
+
+  const items = [itemInfoItinerary, itemInfoItinerary2]
+
   return (
     <div >
         <a href="#" onClick={()=>{console.log("Go back")}}>
         Back
         </a>
         <div className="event-item-screen">
-            <EventItem {...itemInfoItinerary} />
+            <EventItem {...items[1]} />
             <GeneralButton label="Add To Itinerary" onClick={onAddToItinerary} paddingBottom="10px" paddingTop="10px" />
         </div>
     </div>

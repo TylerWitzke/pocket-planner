@@ -16,6 +16,8 @@ import BrowseAttractions from './components/BrowseAttractions/BrowseAttractions'
 import MainPage from './components/MainPage/MainPage';
 import EventItemScreen from './components/EventItemScreen/EventItemScreen'
 import AttractionItemScreen from './components/AttractionItemScreen/AttractionItemScreen'
+import BrowseEvents from './components/BrowseEvents/BrowseEvents'
+import BrowseAmenities from './components/BrowseAmenities/BrowseAmenities'
 
 // Pictures
 import calgary_stampeders from './components/assets/stampeders_logo.png'
@@ -65,6 +67,8 @@ function App() {
       <Route path="/main" element={<MainPage items={items}/>} />
       <Route path="/itinerary" element={<BrowseItinerary/>} />
       <Route path="/attractions" element={<BrowseAttractions/>} />
+      <Route path="/events" element={<BrowseEvents/>} />
+      <Route path="/amenities" element={<BrowseAmenities/>} />
       <Route path="/EventConfirmation" element={<EventConfirmationScreen/>} />
       <Route path="/AttractionConfirmation" element={<AttractionConfirmationScreen/>} />
       <Route path="/search-bar" element={<SearchBar/>} />
@@ -72,7 +76,7 @@ function App() {
       <Route path="/item-info/:type/:id" element={ItemInfo} />
       <Route path="/c" element={<BasicDateCalendar/>} />
       <Route path="/attractionItemScreen" element={<AttractionItemScreen/>} />
-      <Route path="/eventItemScreen" element={<EventItemScreen/>} />
+      <Route path="/eventitemscreen" element={<EventItemScreen/>} />
     </Routes>
   </Router>
   );
