@@ -6,10 +6,21 @@ import calaway_attraction from '../assets/calaway_attraction.jpg'
 import ex_machina from '../assets/ex_machina.jpg'
 import SearchBar from '../SearchBar/SearchBar';
 import Browse from '../Browse/Browse';
+import { useNavigate } from 'react-router'
 
 const BrowseEvents = () => {
+
+    const navigate = useNavigate();
+    const redirectBack = () => {
+        navigate(-1);
+    };
+
+    const routeToEventItemScreen = (e) => {
+        console.log(e.title)
+    }
+
     const itemInfoStampeders = {
-        onClick: () => { console.log("Navigate to Stampeders item info"); },
+        onClick: routeToEventItemScreen,
         title: "Calgary Stampeders",
         info1: "Saturday, October 14th 7:30pm",
         info2: "McMahon Stadium - 1817 Crowchild Trail NW",
@@ -43,7 +54,7 @@ const BrowseEvents = () => {
 
     return (
         <div>
-            <a href="#" onClick={()=>{console.log("Go back")}}>
+            <a href="#" onClick={redirectBack}>
                 Back
             </a>
             <div className="browse-event-container">

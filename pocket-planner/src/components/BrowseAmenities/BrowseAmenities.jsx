@@ -6,8 +6,13 @@ import calaway_attraction from '../assets/calaway_attraction.jpg'
 import ex_machina from '../assets/ex_machina.jpg'
 import SearchBar from '../SearchBar/SearchBar';
 import Browse from '../Browse/Browse';
+import { useNavigate } from 'react-router'
 
 const BrowseAmenities = () => {
+    const navigate = useNavigate();
+    const redirectBack = () => {
+        navigate(-1);
+    };
     const itemInfoStampeders = {
         onClick: () => { console.log("Navigate to Stampeders item info"); },
         title: "Calgary Stampeders",
@@ -43,7 +48,7 @@ const BrowseAmenities = () => {
 
     return (
         <div>
-            <a href="#" onClick={()=>{console.log("Go back")}}>
+            <a href="#" onClick={redirectBack}>
                 Back
             </a>
             <div className="browse-amenities-container">

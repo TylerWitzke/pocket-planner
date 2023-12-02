@@ -14,6 +14,14 @@ const MainPage = ({items}) => {
         navigate('/attractions');
     };
 
+    const redirectToEvents = () => {
+        navigate('/events');
+    };
+
+    const redirectToAmenities = () => {
+        navigate('/amenities');
+    };
+
     const redirectToItinerary = () => {
         navigate('/itinerary');
     };
@@ -25,7 +33,7 @@ const MainPage = ({items}) => {
         <GeneralButton 
             className="general-button-style" 
             label="Events" 
-            onClick={()=>{console.log("Go to events")}} 
+            onClick={redirectToEvents} 
             paddingBottom="10px" 
             paddingTop="10px"
             height="40px"
@@ -34,7 +42,7 @@ const MainPage = ({items}) => {
         <GeneralButton 
             className="general-button-style" 
             label="Amenities" 
-            onClick={()=>{console.log("Go to amenities")}} 
+            onClick={redirectToAmenities} 
             paddingBottom="10px" 
             paddingTop="10px"
             height="40px"
