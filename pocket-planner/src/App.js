@@ -75,7 +75,7 @@ function App() {
       <Route path="/itineraryItem" element={<ItineraryItemInfo/>} />
       <Route path="/item-info/:type/:id" element={ItemInfo} />
       <Route path="/c" element={<BasicDateCalendar/>} />
-      <Route path="/attractionItemScreen" element={<AttractionItemScreen/>} />
+      <Route path="/attractionttemscreen" element={<AttractionItemScreen/>} />
       <Route path="/eventitemscreen" element={<EventItemScreen/>} />
     </Routes>
   </Router>

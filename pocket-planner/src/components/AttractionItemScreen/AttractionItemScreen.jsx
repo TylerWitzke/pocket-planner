@@ -5,6 +5,9 @@ import AttractionItem from '../AttractionItem/AttractionItem';
 import GeneralButton from '../GeneralButton/GeneralButton';  
 import './AttractionItemScreen.css';
 import blue_ring_attraction from '../assets/blue_ring_attraction.jpg'
+import { useNavigate } from 'react-router'
+import { attraction_items_info } from '../../Constants';
+import { useLocation } from 'react-router-dom';
 
 
 const AttractionItemScreen = ({ onAddToItinerary }) => {
@@ -18,14 +21,25 @@ const AttractionItemScreen = ({ onAddToItinerary }) => {
     hours: 'Open 24 hours',
   };
 
+  const navigate = useNavigate();
+  const location = useLocation();
+    const redirectBack = () => {
+        navigate(-1);
+    };
+
+  const queryParams = new URLSearchParams(location.search);
+
+  const index = queryParams.get('attractionid');
+
+
 
   return (
     <div>
-    <a href="#" onClick={()=>{console.log("Go back")}}>
+    <a href="#" onClick={redirectBack}>
         Back
     </a>
     <div className="attraction-item-screen">
-      <AttractionItem {...attractionData} />
+      <AttractionItem {...attraction_items_info[parseInt(index, 10)]} />
       <GeneralButton label="Add to Itinerary" onClick={onAddToItinerary} paddingBottom="5px" paddingTop="5px" />
     </div>
     </div>

@@ -7,41 +7,19 @@ import ex_machina from '../assets/ex_machina.jpg'
 import SearchBar from '../SearchBar/SearchBar';
 import Browse from '../Browse/Browse';
 import { useNavigate } from 'react-router'
+import { attraction_items } from '../../Constants';
 
 const BrowseAttractions = () => {
-    const itemInfoStampeders = {
-        onClick: () => { console.log("Navigate to Stampeders item info"); },
-        title: "Calgary Stampeders",
-        info1: "Saturday, October 14th 7:30pm",
-        info2: "McMahon Stadium - 1817 Crowchild Trail NW",
-        info3: "",
-        picture: calgary_stampeders
-    };
-
-    const itemInfoCalaway = {
-        onClick: () => { console.log("Navigate to Calaway Park item info"); },
-        title: "Calaway Park",
-        info1: "Sunday, October 15th 9:30am",
-        info2: "Calaway Park - 245033 Range Rd 33",
-        info3: "",
-        picture: calaway_attraction
-    };
-
-    const itemInfoExMachina = {
-        onClick: () => { console.log("Navigate to Ex Machina item info"); },
-        title: "Ex Machina",
-        info1: "Sunday, October 15th 4:00pm",
-        info2: "Scotiabank Theatre Chinook - 6455 Macleod Trail SW",
-        info3: "",
-        picture: ex_machina
-    };
-
-    const items = [itemInfoStampeders,itemInfoCalaway,itemInfoExMachina]
+    
 
     const navigate = useNavigate();
     const redirectBack = () => {
         navigate(-1);
     };
+
+    const routeToAttractionScreen = (id) => {
+        navigate('/attractionttemscreen?attractionid='+id)
+    }
 
     const handleSearch = (searchTerm) => {
     console.log(`Searching for: ${searchTerm}`);
@@ -60,7 +38,7 @@ const BrowseAttractions = () => {
               <SearchBar placeholder="Search..." onSearch={handleSearch} />
 
               <h2>Browse Example</h2>
-              <Browse items={items} height={"450px"} />
+              <Browse items={attraction_items} height={"450px"} onClick={routeToAttractionScreen}/>
             </div>
         </div>
       );

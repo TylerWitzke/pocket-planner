@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import './Item.css'; // Import the CSS file
 
-const Item = ({onClick, title, info1, info2, info3, picture, borderCol}) => {
+const Item = ({onClick, title, info1, info2, info3, picture, borderCol, id}) => {
   const handleClick = (e) => {
     e.stopPropagation(); // This will prevent the event from bubbling up to parent elements
-    onClick(); // Call the onClick handler passed to the Item
+    onClick(id); // Call the onClick handler passed to the Item
   };
 
   return (

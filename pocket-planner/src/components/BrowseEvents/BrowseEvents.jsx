@@ -15,8 +15,8 @@ const BrowseEvents = () => {
         navigate(-1);
     };
 
-    const routeToEventItemScreen = (e) => {
-        console.log(e.title)
+    const routeToEventItemScreen = (val) => {
+        console.log(val)
     }
 
     const itemInfoStampeders = {
