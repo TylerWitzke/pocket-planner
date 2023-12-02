@@ -23,14 +23,16 @@ const AttractionItemScreen = ({ onAddToItinerary }) => {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  const index = queryParams.get('attractionid');
     const redirectBack = () => {
         navigate(-1);
     };
 
-  const queryParams = new URLSearchParams(location.search);
-
-  const index = queryParams.get('attractionid');
-
+    const redirectToItinerary = () => {
+        navigate('/additem?itemid='+index);
+    };
 
 
   return (
@@ -40,7 +42,7 @@ const AttractionItemScreen = ({ onAddToItinerary }) => {
     </a>
     <div className="attraction-item-screen">
       <AttractionItem {...attraction_items_info[parseInt(index, 10)]} />
-      <GeneralButton label="Add to Itinerary" onClick={onAddToItinerary} paddingBottom="5px" paddingTop="5px" />
+      <GeneralButton label="Add to Itinerary" onClick={redirectToItinerary} paddingBottom="5px" paddingTop="5px" />
     </div>
     </div>
   );

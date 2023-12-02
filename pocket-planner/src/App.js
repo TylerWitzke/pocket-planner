@@ -23,6 +23,7 @@ import BrowseAmenities from './components/BrowseAmenities/BrowseAmenities'
 import calgary_stampeders from './components/assets/stampeders_logo.png'
 import calaway_attraction from './components/assets/calaway_attraction.jpg'
 import ex_machina from './components/assets/ex_machina.jpg'
+import AddItem from './components/AddItem/AddItem';
 
 const itemInfoStampeders = {
   onClick: () => { console.log("Navigate to Stampeders item info"); },
@@ -77,6 +78,7 @@ function App() {
       <Route path="/c" element={<BasicDateCalendar/>} />
       <Route path="/attractionttemscreen" element={<AttractionItemScreen/>} />
       <Route path="/eventitemscreen" element={<EventItemScreen/>} />
+      <Route path="/additem" element={<AddItem/>} />
     </Routes>
   </Router>
   );
