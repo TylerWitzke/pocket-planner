@@ -14,9 +14,9 @@ const BrowseEvents = () => {
         navigate(-1);
     };
 
-    const routeToEventItemScreen = (val) => {
-        //navigate('/eventitemscreen?attractionid='+id)
-        console.log('this will route soon')
+    const routeToEventItemScreen = (id) => {
+        navigate('/eventitemscreen?eventid='+id)
+        //console.log('this will route soon')
     }
 
     const handleSearch = (searchTerm) => {

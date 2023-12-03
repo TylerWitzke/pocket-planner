@@ -79,6 +79,7 @@ function App() {
       <Route path="/attractionttemscreen" element={<AttractionItemScreen/>} />
       <Route path="/eventitemscreen" element={<EventItemScreen/>} />
       <Route path="/additem" element={<AddItem/>} />
+
     </Routes>
   </Router>
   );

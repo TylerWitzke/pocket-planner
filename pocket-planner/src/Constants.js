@@ -173,4 +173,43 @@ const morganWallen = {
 
 export const event_items = [calgaryStampeders,taylorSwift,dirtyDancing,calgaryHitmen,morganWallen]
 
-// End attractions ----------------------------------------------------- still need event item info
+// AHHHHHH THIS NEEDS TO BE CHANGED ----------------------------------------------------- change to event item info
+// Currently using attractions because no time
+const hi = {
+  title: "Calgary Stampeders",
+  date: "Wednesday Oct 18th at 9:30pm",
+  location: "McMahon stadium",
+  picture: calgary_stampeders_event,
+};
+
+const my = {
+  title: "Taylor Swift",
+  date: "ahh",
+  location: "wdn",
+  picture: taylor_swift_event,
+};
+
+const name = {
+  title: "Dirty Dancing",
+  date: "ahh",
+  location: "wdn",
+  picture: dirty_dancing_event,
+};
+
+const is = {
+  title: 'Calgary Hitmen',
+  date: "ahh",
+  location: "wdn",
+  picture: calgary_hitmen_event
+};
+
+const what = {
+  title: "Morgan Wallen",
+  date: "ahh",
+  location: "wdn",
+  picture: morgan_wallen_event,
+};
+
+export const event_items_info = [hi, my, name, is, what]
+
+// End Events ----------------------------------------------------- still need to change event item info

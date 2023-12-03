@@ -3,38 +3,38 @@ import GeneralButton from '../GeneralButton/GeneralButton';
 import './EventItemScreen.css';
 import calgaryflamescanucks from '../assets/calgaryflamescanucks.png';
 import EventItem from '../EventItem/EventItem';
+import { useNavigate } from 'react-router'
+import { event_items_info } from '../../Constants';
 import { useLocation } from 'react-router-dom';
 
+
+import AttractionItem from '../AttractionItem/AttractionItem';
+
+
 const EventItemScreen = ({ onAddToItinerary }) => {
-  const itemInfoItinerary = {
-    title: 'Calgary Flames', 
-    picture: calgaryflamescanucks,
-    date: 'Tuesday, October 24th 7:30pm',
-    location: 'Scotiabank Saddledome',
-  };
 
-  const itemInfoItinerary2 = {
-    title: 'Calgary Hitmen', 
-    picture: calgaryflamescanucks,
-    date: 'Tuesday, October 24th 7:30pm',
-    location: 'Scotiabank Saddledome',
-  };
-
-  const items = [itemInfoItinerary, itemInfoItinerary2]
-
+  const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
   const index = queryParams.get('eventid');
+    const redirectBack = () => {
+        navigate(-1);
+    };
+
+    const redirectToItinerary = () => {
+      console.log("Hello")
+        // navigate('/additem?itemid='+index);
+    };
 
   return (
     <div >
-        <a href="#" onClick={()=>{console.log("Go back")}}>
+        <a href="#" onClick={redirectBack}>
         Back
         </a>
         <div className="event-item-screen">
-            <EventItem {...items[parseInt(index, 10)]} />
-            <GeneralButton label="Add To Itinerary" onClick={onAddToItinerary} paddingBottom="10px" paddingTop="10px" />
+            <EventItem {...event_items_info[parseInt(index, 10)]} />
+            <GeneralButton label="Add To Itinerary" onClick={redirectToItinerary} paddingBottom="10px" paddingTop="10px" />
         </div>
     </div>
   );
