@@ -1,9 +1,6 @@
 import React from 'react'
 
 import './BrowseAttractions.css';  // Import the CSS file
-import calgary_stampeders from '../assets/stampeders_logo.png'
-import calaway_attraction from '../assets/calaway_attraction.jpg'
-import ex_machina from '../assets/ex_machina.jpg'
 import SearchBar from '../SearchBar/SearchBar';
 import Browse from '../Browse/Browse';
 import { useNavigate } from 'react-router'

@@ -5,6 +5,12 @@ import calgary_tower_attraction from './components/assets/calgary_tower_attracti
 import heritage_park_attraction from './components/assets/heritage_park_attraction.jpg'
 import oplympic_plaza_attraction from './components/assets/olympic_plaza_attraction.jpg'
 
+import calgary_stampeders_event from './components/assets/calgary_stampeders.png'
+import taylor_swift_event from './components/assets/taylor_swift_event.jpg'
+import dirty_dancing_event from './components/assets/dirty_dancing_event.jpg'
+import calgary_hitmen_event from './components/assets/calgary_hitmen_event.png'
+import morgan_wallen_event from './components/assets/morgan_wallen_event.jpg'
+
 // Start attractions -----------------------------------------------------
 const bigBlueRing = {
     onClick: () => { console.log("bigBlueRing"); },
@@ -112,3 +118,59 @@ const bigBlueRingInfo = {
   export const attraction_items_info = [bigBlueRingInfo, calawayParkInfo, calgaryTowerInfo, heritageParkInfo, olympicPlazaInfo]
 
 // End attractions -----------------------------------------------------
+
+// Start Events -----------------------------------------------------
+const calgaryStampeders = {
+  onClick: () => { console.log("bigBlueRing"); },
+  title: "Calgary Stampeders",
+  info1: "vs Winnipeg Blye Bombers",
+  info2: "Saturday Oct 14th at 7:00pm",
+  info3: "McMahon stadium",
+  picture: calgary_stampeders_event,
+  id: 0
+};
+
+const taylorSwift= {
+  onClick: () => { console.log("calawayPark"); },
+  title: "Taylor Swift",
+  info1: "The Eras Tour",
+  info2: "Sunday Oct 15th at 8:30pm",
+  info3: "Saddledome",
+  picture: taylor_swift_event,
+  id: 1
+};
+
+const dirtyDancing = {
+  onClick: () => { console.log("calgaryTower"); },
+  title: "Dirty Dancing",
+  info1: "Live play",
+  info2: "Monday Oct 16th at 6:30pm",
+  info3: "Southern Alberta Jubilee Auditorium",
+  picture: dirty_dancing_event,
+  id: 2
+};
+
+const calgaryHitmen = {
+  onClick: () => { console.log("heritagePark"); },
+  title: "Calgary Hitmen",
+  info1: "vs Edmonton Oil Kings",
+  info2: "Tuesday Oct 17th at 4:30pm",
+  info3: "Saddledome",
+  picture: calgary_hitmen_event,
+  id: 3
+
+};
+
+const morganWallen = {
+  onClick: () => { console.log("olympicPlaza"); },
+  title: "Morgan Wallen",
+  info1: "One Night at a Time",
+  info2: "Wednesday Oct 18th at 9:30pm",
+  info3: "Saddledome",
+  picture: morgan_wallen_event,
+  id: 4
+};
+
+export const event_items = [calgaryStampeders,taylorSwift,dirtyDancing,calgaryHitmen,morganWallen]
+
+// End attractions ----------------------------------------------------- still need event item info
