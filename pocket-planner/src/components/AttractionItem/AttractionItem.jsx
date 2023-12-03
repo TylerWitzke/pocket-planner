@@ -1,10 +1,19 @@
 // AttractionItem.jsx
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import './AttractionItem.css'; // Import the CSS file
+import React from "react";
+import PropTypes from "prop-types";
+import "./AttractionItem.css"; // Import the CSS file
 
-const AttractionItem = ({ title, picture, description, locationName, locationDistance, contact, hours, onClick }) => {
+const AttractionItem = ({
+  title,
+  picture,
+  description,
+  locationName,
+  locationDistance,
+  contact,
+  hours,
+  onClick,
+}) => {
   return (
     <div className="attraction-item-container" onClick={onClick}>
       <div className="attraction-item-text-content">
@@ -19,16 +28,22 @@ const AttractionItem = ({ title, picture, description, locationName, locationDis
             {/* Location details */}
             <span className="info-label">Location</span>
             <div className="location-details">
-              <span className="info-value" style={{ color: 'blue' }}>{locationName}</span>
+              <span className="info-value" style={{ color: "blue" }}>
+                {locationName}
+              </span>
               {locationDistance && (
-                <span className="info-value" style={{ color: 'black' }}>{locationDistance}</span>
+                <span className="info-value" style={{ color: "black" }}>
+                  {locationDistance}
+                </span>
               )}
             </div>
           </div>
           <div className="attraction-item-info">
             {/* Contact details */}
             <span className="info-label">Contact</span>
-            <span className="info-value" style={{ color: 'blue' }}>{contact}</span>
+            <span className="info-value" style={{ color: "blue" }}>
+              {contact}
+            </span>
           </div>
           <div className="contact-hours-container">
             {/* Container for hours */}
@@ -42,6 +57,3 @@ const AttractionItem = ({ title, picture, description, locationName, locationDis
 };
 
 export default AttractionItem;
-
-
-

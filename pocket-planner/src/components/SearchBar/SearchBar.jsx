@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styles from './SearchBar.module.css';
+import React, { useState } from "react";
+import styles from "./SearchBar.module.css";
 
 const SearchBar = ({ placeholder, onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);

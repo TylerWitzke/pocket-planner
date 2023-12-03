@@ -1,5 +1,5 @@
 // RadioButton.jsx
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const RadioButton = ({ options, onChange }) => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -10,7 +10,7 @@ const RadioButton = ({ options, onChange }) => {
   };
 
   return (
-    <div className='radio-button'>
+    <div className="radio-button">
       {options.map((option) => (
         <label key={option.value} className="radio-button-label">
           <input

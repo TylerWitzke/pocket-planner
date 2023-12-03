@@ -1,10 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './EventItem.css';
+import React from "react";
+import PropTypes from "prop-types";
+import "./EventItem.css";
 
 const EventItem = ({ title, date, location, picture }) => {
-  const isScotiabankSaddledome = location === 'Scotiabank Saddledome';
-  const isBuyTicketsOrDirections = title.includes('Buy Tickets') || title.includes('Directions');
+  const isScotiabankSaddledome = location === "Scotiabank Saddledome";
+  const isBuyTicketsOrDirections =
+    title.includes("Buy Tickets") || title.includes("Directions");
 
   return (
     <div className="event-item">
@@ -13,12 +14,24 @@ const EventItem = ({ title, date, location, picture }) => {
         <img src={picture} alt={title} />
       </div>
       <div className="content-container">
-        <p className="date">Date: <br/><span className="black-text">{date}</span></p>
-        <p className="location">Location: <br/><span className={isScotiabankSaddledome ? 'blue-text' : 'black-text'}>{location}</span></p>
+        <p className="date">
+          Date: <br />
+          <span className="black-text">{date}</span>
+        </p>
+        <p className="location">
+          Location: <br />
+          <span className={isScotiabankSaddledome ? "blue-text" : "black-text"}>
+            {location}
+          </span>
+        </p>
         {isBuyTicketsOrDirections ? (
           <>
             <p className="blue-text">{title}</p>
-            {title.includes('Directions') && <p className="directions-padding">{/* Add padding for Directions */}</p>}
+            {title.includes("Directions") && (
+              <p className="directions-padding">
+                {/* Add padding for Directions */}
+              </p>
+            )}
           </>
         ) : (
           <>
@@ -32,4 +45,3 @@ const EventItem = ({ title, date, location, picture }) => {
 };
 
 export default EventItem;
-

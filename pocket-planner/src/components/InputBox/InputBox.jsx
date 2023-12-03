@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './InputBox.css'; // Import the CSS file for styling
+import React from "react";
+import PropTypes from "prop-types";
+import "./InputBox.css"; // Import the CSS file for styling
 
 const InputBox = ({ icon, placeholder, value, onChange, type }) => {
   return (
