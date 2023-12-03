@@ -8,8 +8,6 @@ import { attraction_items } from '../../Constants';
 import RadioButton from '../RadioButton/RadioButton'
 
 const BrowseAttractions = () => {
-
-
     const navigate = useNavigate();
     const redirectBack = () => {
         navigate(-1);

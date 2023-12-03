@@ -6,7 +6,7 @@ import './AttractionConfirmationScreen.css';  // Import the CSS file
 import ItemSuccess from '../ItemSuccess/ItemSuccess';  // Import the Item component
 import blue_ring_attraction from '../assets/blue_ring_attraction.jpg'
 import Item from '../Item/Item';  // Import the Item component
-import { attraction_items } from '../../Constants';
+import { attraction_items, amenitie_items } from '../../Constants';
 import { dateInfo } from '../AddItem/AddItem';
 import { useNavigate } from 'react-router'
 import { useLocation } from 'react-router-dom';
@@ -15,6 +15,8 @@ const AttractionConfirmationScreen = ({ onEditDetails, onDeleteItem, onBackToMai
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const index = queryParams.get('itemid');
+  const page = queryParams.get('page');
+  const items = (page == 'attraction' ? attraction_items : amenitie_items)
   const navigate = useNavigate();
     const redirectBack = () => {
         navigate(-1);
@@ -25,7 +27,7 @@ const AttractionConfirmationScreen = ({ onEditDetails, onDeleteItem, onBackToMai
     };
 
     const updateList = () => {
-      updateListFunction(attraction_items[parseInt(index, 10)]);
+      updateListFunction(items[parseInt(index, 10)]);
       redirectMain();
     }
     
@@ -36,11 +38,11 @@ const AttractionConfirmationScreen = ({ onEditDetails, onDeleteItem, onBackToMai
     </a>
     <div className="attraction-confirmation-screen-container">
 
-      <Item {...attraction_items[parseInt(index, 10)]} />
+      <Item {...items[parseInt(index, 10)]} />
       <div className='item-success-container-style'>
         <div className='item-success-text-content-style'>
           <h2 className='item-success-title-style'>
-          Success! You have added {attraction_items[parseInt(index, 10)].title}  to your itinerary on {dateInfo.month} {dateInfo.day} for {dateInfo.hour} hours and {dateInfo.minute} minutes. 
+          Success! You have added {items[parseInt(index, 10)].title}  to your itinerary on {dateInfo.month} {dateInfo.day} for {dateInfo.hour} hours and {dateInfo.minute} minutes. 
           </h2>
         </div>
       </div>

@@ -25,6 +25,7 @@ import calgary_stampeders from './components/assets/stampeders_logo.png'
 import calaway_attraction from './components/assets/calaway_attraction.jpg'
 import ex_machina from './components/assets/ex_machina.jpg'
 import AddItem from './components/AddItem/AddItem';
+import AmenitiesItemScreen from './components/AmenitiesItemScreen/AmenitiesItemScreen';
 
 function App() {
   const [myArray, setMyArray] = useState([]);
@@ -52,6 +53,7 @@ function App() {
       <Route path="/item-info/:type/:id" element={ItemInfo} />
       <Route path="/c" element={<BasicDateCalendar/>} />
       <Route path="/attractionttemscreen" element={<AttractionItemScreen/>} />
+      <Route path="/amenitieitemscreen" element={<AmenitiesItemScreen/>} />
       <Route path="/eventitemscreen" element={<EventItemScreen/>} />
       <Route path="/additem" element={<AddItem/>} />
 
