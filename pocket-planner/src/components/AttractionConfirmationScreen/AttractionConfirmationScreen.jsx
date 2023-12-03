@@ -7,9 +7,28 @@ import ItemSuccess from '../ItemSuccess/ItemSuccess';  // Import the Item compon
 import blue_ring_attraction from '../assets/blue_ring_attraction.jpg'
 import Item from '../Item/Item';  // Import the Item component
 import { attraction_items } from '../../Constants';
-import { expday } from '../AddItem/AddItem';
+import { dateInfo } from '../AddItem/AddItem';
+import { useNavigate } from 'react-router'
+import { useLocation } from 'react-router-dom';
+import { appendItem } from '../../App';
 
-const AttractionConfirmationScreen = ({ onEditDetails, onDeleteItem, onBackToMainMenu }) => {
+const AttractionConfirmationScreen = ({ onEditDetails, onDeleteItem, onBackToMainMenu, updateListFunction }) => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const index = queryParams.get('itemid');
+  const navigate = useNavigate();
+    const redirectBack = () => {
+        navigate(-1);
+    };
+
+    const redirectMain = () => {
+      navigate('/main');
+    };
+
+    const updateList = () => {
+      updateListFunction(attraction_items[parseInt(index, 10)]);
+      redirectMain();
+    }
 
     const itemInfoRing = {
         title: "Big Blue Ring",
@@ -21,23 +40,23 @@ const AttractionConfirmationScreen = ({ onEditDetails, onDeleteItem, onBackToMai
 
   return (
     <div>
-    <a href="#" onClick={()=>{console.log("Go back")}}>
+    <a href="#" onClick={redirectBack}>
         Back
     </a>
     <div className="attraction-confirmation-screen-container">
 
-      <Item {...itemInfoRing} />
+      <Item {...attraction_items[parseInt(index, 10)]} />
       <div className='item-success-container-style'>
         <div className='item-success-text-content-style'>
           <h2 className='item-success-title-style'>
-          Success! You have added Big Blue Ring  to your itinerary for 9:41am on {expday} February 15th for 15 minutes. 
+          Success! You have added {attraction_items[parseInt(index, 10)].title}  to your itinerary on {dateInfo.month} {dateInfo.day} for {dateInfo.hour} hours and {dateInfo.minute} minutes. 
           </h2>
         </div>
       </div>
       {/* Include GeneralButton components */}
-      <GeneralButton label="Edit details" onClick={()=>{console.log("Go back")}} paddingBottom="10px" paddingTop="10px" />
-      <GeneralButton label="Delete this item" onClick={()=>{console.log("Go back")}} paddingBottom="10px" paddingTop="10px" />
-      <GeneralButton label="Back to Main Menu" onClick={()=>{console.log("Go back")}} paddingBottom="10px" paddingTop="10px"/>
+      <GeneralButton label="Edit details" onClick={redirectBack} paddingBottom="10px" paddingTop="10px" />
+      <GeneralButton label="Delete this item" onClick={redirectMain} paddingBottom="10px" paddingTop="10px" />
+      <GeneralButton label="Back to Main Menu" onClick={updateList} paddingBottom="10px" paddingTop="10px"/>
 
     </div>
     </div>

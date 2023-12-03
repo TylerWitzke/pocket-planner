@@ -16,14 +16,20 @@ const years = ["Year", ...Array.from({ length: 10 }, (_, i) => currentYear + i)]
 const hours = ["Hours", ...Array.from({ length: 24 }, (_, i) => i + "hr")];
 const minutes = ["Minutes", ...Array.from({ length: 60 }, (_, i) => i + "min")];
 
-export let expday =''
+export let dateInfo = {
+    month: '',
+    day: '',
+    year: '',
+    hour: '',
+    minute: ''
+}
 
 const AddItem = ({ title, image }) => {
     const [month, setMonth] = useState('');
     const [day, setDay] = useState('');
     const [year, setYear] = useState('');
-    const [hours, setHours] = useState('');
-    const [minutes, setMinutes] = useState('');
+    const [hour, setHours] = useState('');
+    const [minute, setMinutes] = useState('');
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const index = queryParams.get('itemid');
@@ -33,8 +39,12 @@ const AddItem = ({ title, image }) => {
     };
 
     const onSubmit = () => {
-        expday = day;
-        navigate('/attractionconfirmation')
+        dateInfo.day = day;
+        dateInfo.month = month;
+        dateInfo.year = year;
+        dateInfo.hour = hour;
+        dateInfo.minute = minute;
+        navigate('/attractionconfirmation?itemid='+index)
     }
 
     return (

@@ -3,8 +3,10 @@ import './MainPage.css';
 import ItineraryWidget from '../ItineraryWidget/ItineraryWidget';
 import GeneralButton from '../GeneralButton/GeneralButton';
 import { useNavigate } from 'react-router'
+import { useState } from 'react';
 
 const MainPage = ({items}) => {
+
     const navigate = useNavigate();
     const redirectBack = () => {
         navigate('/');
@@ -25,6 +27,12 @@ const MainPage = ({items}) => {
     const redirectToItinerary = () => {
         navigate('/itinerary');
     };
+
+  const [myArray, setMyArray] = useState([]);
+
+  const appendElement = () => {
+    setMyArray((prevArray) => [...prevArray, 'new element']);
+  };
 
   return (
     <div>
