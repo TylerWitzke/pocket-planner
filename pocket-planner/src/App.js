@@ -45,7 +45,7 @@ function App() {
       <Route path="/attractions" element={<BrowseAttractions/>} />
       <Route path="/events" element={<BrowseEvents/>} />
       <Route path="/amenities" element={<BrowseAmenities/>} />
-      <Route path="/EventConfirmation" element={<EventConfirmationScreen/>} />
+      <Route path="/eventconfirmation" element={<EventConfirmationScreen updateListFunction={appendElement}/>} />
       <Route path="/attractionconfirmation" element={<AttractionConfirmationScreen updateListFunction={appendElement}/>} />
       <Route path="/search-bar" element={<SearchBar/>} />
       <Route path="/itineraryItem" element={<ItineraryItemInfo/>} />

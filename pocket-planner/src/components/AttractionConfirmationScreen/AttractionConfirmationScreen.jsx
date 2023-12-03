@@ -10,7 +10,6 @@ import { attraction_items } from '../../Constants';
 import { dateInfo } from '../AddItem/AddItem';
 import { useNavigate } from 'react-router'
 import { useLocation } from 'react-router-dom';
-import { appendItem } from '../../App';
 
 const AttractionConfirmationScreen = ({ onEditDetails, onDeleteItem, onBackToMainMenu, updateListFunction }) => {
   const location = useLocation();
@@ -29,15 +28,7 @@ const AttractionConfirmationScreen = ({ onEditDetails, onDeleteItem, onBackToMai
       updateListFunction(attraction_items[parseInt(index, 10)]);
       redirectMain();
     }
-
-    const itemInfoRing = {
-        title: "Big Blue Ring",
-        info1: "“Art” Piece - 16 km",
-        info2: "Open 24 Hours",
-        info3: "",
-        picture: blue_ring_attraction
-      };
-
+    
   return (
     <div>
     <a href="#" onClick={redirectBack}>

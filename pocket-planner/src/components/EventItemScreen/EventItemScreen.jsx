@@ -22,9 +22,8 @@ const EventItemScreen = ({ onAddToItinerary }) => {
         navigate(-1);
     };
 
-    const redirectToItinerary = () => {
-      console.log("Hello")
-        // navigate('/additem?itemid='+index);
+    const redirectToConfirmation = () => {
+        navigate('/eventconfirmation?eventid='+index);
     };
 
   return (
@@ -34,7 +33,7 @@ const EventItemScreen = ({ onAddToItinerary }) => {
         </a>
         <div className="event-item-screen">
             <EventItem {...event_items_info[parseInt(index, 10)]} />
-            <GeneralButton label="Add To Itinerary" onClick={redirectToItinerary} paddingBottom="10px" paddingTop="10px" />
+            <GeneralButton label="Add To Itinerary" onClick={redirectToConfirmation} paddingBottom="10px" paddingTop="10px" />
         </div>
     </div>
   );
