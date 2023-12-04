@@ -58,11 +58,11 @@ const AddItem = ({ title, image }) => {
 
   const onSubmit = () => {
     dateInfo.day = parseInt(day, 10);
-    dateInfo.month = months.indexOf(month)-1;
+    dateInfo.month = months.indexOf(month) - 1;
     dateInfo.year = parseInt(year, 10);
     dateInfo.hour = hour;
     dateInfo.minute = minute;
-    console.log(dateInfo.month)
+    console.log(dateInfo.month);
     navigate("/attractionconfirmation?itemid=" + index + "&page=" + page);
   };
 

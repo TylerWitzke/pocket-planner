@@ -32,7 +32,11 @@ const AttractionConfirmationScreen = ({
   };
 
   const updateList = () => {
-    items[parseInt(index, 10)].date = new Date(dateInfo.year, dateInfo.month, dateInfo.date)
+    items[parseInt(index, 10)].date = new Date(
+      dateInfo.year,
+      dateInfo.month,
+      dateInfo.day,
+    );
     updateListFunction(items[parseInt(index, 10)]);
     redirectMain();
   };

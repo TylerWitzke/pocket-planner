@@ -18,7 +18,7 @@ const BrowseItinerary = ({ items }) => {
   };
 
   const redirectToCalendar = () => {
-    navigate('/c');
+    navigate("/c");
   };
 
   const handleSearch = (searchTerm) => {
