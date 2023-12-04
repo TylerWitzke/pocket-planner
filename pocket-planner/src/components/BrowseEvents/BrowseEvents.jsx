@@ -45,7 +45,7 @@ const BrowseEvents = () => {
         <SearchBar placeholder="Search for events..." onSearch={handleSearch} />
         <Browse
           items={event_items}
-          height={"520px"}
+          height={"550px"}
           onClick={routeToEventItemScreen}
         />
       </div>

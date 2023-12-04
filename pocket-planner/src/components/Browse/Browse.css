@@ -1,8 +1,7 @@
 .browse-container {
-    display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     overflow-y: auto;
     width: 100%; /* Ensure the container fills its parent */
 }

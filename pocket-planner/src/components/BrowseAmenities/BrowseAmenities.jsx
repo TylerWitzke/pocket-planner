@@ -47,7 +47,7 @@ const BrowseAmenities = () => {
         />
         <Browse
           items={amenitie_items}
-          height={"520px"}
+          height={"550px"}
           onClick={routeToAmenitiesScreen}
         />
       </div>

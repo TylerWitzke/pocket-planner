@@ -46,7 +46,7 @@ const BrowseAttractions = () => {
         />
         <Browse
           items={attraction_items}
-          height={"520px"}
+          height={"550px"}
           onClick={routeToAttractionScreen}
         />
       </div>
