@@ -127,7 +127,8 @@ const bigBlueRing2 = {
   info2: "Open 24 hours",
   info3: "Rating: 5/5",
   picture: big_blue_ring_attraction,
-  id: 0
+  id: 0,
+  date: null
 };
 
 const calawayPark2 = {
@@ -137,7 +138,8 @@ const calawayPark2 = {
   info2: "Open 10am - 9pm",
   info3: "Rating: 4/5",
   picture: calaway_park_attraction,
-  id: 1
+  id: 1,
+  date: null
 };
 
 const calgaryTower2 = {
@@ -147,7 +149,8 @@ const calgaryTower2 = {
   info2: "Open  10am - 1am",
   info3: "Rating: 4/5",
   picture: calgary_tower_attraction,
-  id: 2
+  id: 2,
+  date: null
 };
 
 const heritagePark2 = {
@@ -157,8 +160,8 @@ const heritagePark2 = {
   info2: "Open 8am to 6pm",
   info3: "Rating: 2/5",
   picture: heritage_park_attraction,
-  id: 3
-
+  id: 3,
+  date: null
 };
 
 const olympicPlaza2 = {
@@ -168,7 +171,8 @@ const olympicPlaza2 = {
   info2: "Open 24 hours",
   info3: "Rating: 2/5",
   picture: oplympic_plaza_attraction,
-  id: 4
+  id: 4,
+  date: null
 };
 
 export const amenitie_items = [bigBlueRing2,calawayPark2,calgaryTower2,heritagePark2,olympicPlaza2]
@@ -235,7 +239,8 @@ const calgaryStampeders = {
   info2: "Saturday Oct 14th at 7:00pm",
   info3: "McMahon stadium",
   picture: calgary_stampeders_event,
-  id: 0
+  id: 0,
+  date: new Date(2023, 9, 14)
 };
 
 const taylorSwift= {
@@ -245,7 +250,8 @@ const taylorSwift= {
   info2: "Sunday Oct 15th at 8:30pm",
   info3: "Saddledome",
   picture: taylor_swift_event,
-  id: 1
+  id: 1,
+  date: new Date(2023, 9, 15)
 };
 
 const dirtyDancing = {
@@ -255,7 +261,8 @@ const dirtyDancing = {
   info2: "Monday Oct 16th at 6:30pm",
   info3: "Southern Alberta Jubilee Auditorium",
   picture: dirty_dancing_event,
-  id: 2
+  id: 2,
+  date: new Date(2023, 9, 16)
 };
 
 const calgaryHitmen = {
@@ -265,8 +272,8 @@ const calgaryHitmen = {
   info2: "Tuesday Oct 17th at 4:30pm",
   info3: "Saddledome",
   picture: calgary_hitmen_event,
-  id: 3
-
+  id: 3,
+  date: new Date(2023, 9, 17)
 };
 
 const morganWallen = {
@@ -276,7 +283,8 @@ const morganWallen = {
   info2: "Wednesday Oct 18th at 9:30pm",
   info3: "Saddledome",
   picture: morgan_wallen_event,
-  id: 4
+  id: 4,
+  date: new Date(2023, 9, 18)
 };
 
 export const event_items = [calgaryStampeders,taylorSwift,dirtyDancing,calgaryHitmen,morganWallen]

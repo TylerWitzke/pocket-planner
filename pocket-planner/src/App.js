@@ -30,8 +30,16 @@ import AmenitiesItemScreen from './components/AmenitiesItemScreen/AmenitiesItemS
 function App() {
   const [myArray, setMyArray] = useState([]);
 
-  const appendElement = (item) => {
-    setMyArray((prevArray) => [...prevArray, item]);
+  const appendElement = (newEvent) => {
+    const insertIndex = myArray.findIndex(item => newEvent.date < item.date);
+
+    // If insertIndex is -1, it means the new event is the latest, so push it to the end
+    if (insertIndex === -1) {
+      setMyArray([...myArray, newEvent]);
+    } else {
+      // Otherwise, insert the new event at the correct position
+      setMyArray([...myArray.slice(0, insertIndex), newEvent, ...myArray.slice(insertIndex)]);
+    }
   };
 
   return (
@@ -42,7 +50,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/main" element={<MainPage items={myArray}/>} />
-      <Route path="/itinerary" element={<BrowseItinerary/>} />
+      <Route path="/itinerary" element={<BrowseItinerary items={myArray}/>} />
       <Route path="/attractions" element={<BrowseAttractions/>} />
       <Route path="/events" element={<BrowseEvents/>} />
       <Route path="/amenities" element={<BrowseAmenities/>} />
@@ -51,7 +59,7 @@ function App() {
       <Route path="/search-bar" element={<SearchBar/>} />
       <Route path="/itineraryItem" element={<ItineraryItemInfo/>} />
       <Route path="/item-info/:type/:id" element={ItemInfo} />
-      <Route path="/c" element={<BasicDateCalendar/>} />
+      <Route path="/c" element={<BasicDateCalendar items={myArray}/>} />
       <Route path="/attractionttemscreen" element={<AttractionItemScreen/>} />
       <Route path="/amenitieitemscreen" element={<AmenitiesItemScreen/>} />
       <Route path="/eventitemscreen" element={<EventItemScreen/>} />

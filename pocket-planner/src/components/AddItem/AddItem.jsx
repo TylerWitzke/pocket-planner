@@ -33,9 +33,9 @@ const hours = ["Hours", ...Array.from({ length: 24 }, (_, i) => i + "hr")];
 const minutes = ["Minutes", ...Array.from({ length: 60 }, (_, i) => i + "min")];
 
 export let dateInfo = {
-  month: "",
-  day: "",
-  year: "",
+  month: -1,
+  day: -1,
+  year: -1,
   hour: "",
   minute: "",
 };
@@ -57,11 +57,12 @@ const AddItem = ({ title, image }) => {
   };
 
   const onSubmit = () => {
-    dateInfo.day = day;
-    dateInfo.month = month;
-    dateInfo.year = year;
+    dateInfo.day = parseInt(day, 10);
+    dateInfo.month = months.indexOf(month)-1;
+    dateInfo.year = parseInt(year, 10);
     dateInfo.hour = hour;
     dateInfo.minute = minute;
+    console.log(dateInfo.month)
     navigate("/attractionconfirmation?itemid=" + index + "&page=" + page);
   };
 
