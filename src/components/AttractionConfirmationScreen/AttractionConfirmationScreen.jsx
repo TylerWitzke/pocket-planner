@@ -11,6 +11,21 @@ import { dateInfo } from "../AddItem/AddItem";
 import { useNavigate } from "react-router";
 import { useLocation } from "react-router-dom";
 
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 const AttractionConfirmationScreen = ({
   onEditDetails,
   onDeleteItem,
@@ -35,10 +50,39 @@ const AttractionConfirmationScreen = ({
     items[parseInt(index, 10)].date = new Date(
       dateInfo.year,
       dateInfo.month,
-      dateInfo.day,
+      dateInfo.day
     );
     updateListFunction(items[parseInt(index, 10)]);
     redirectMain();
+  };
+
+  const createMessage = () => {
+    const total_hours = parseInt(dateInfo.hour.slice(0, -2));
+    const total_minutes = parseInt(dateInfo.minute.slice(0, -3));
+    let ret_val = "";
+    if (total_hours > 0) {
+      if (total_hours === 1) {
+        ret_val = "1 hour";
+      } else {
+        ret_val = total_hours + " hours";
+      }
+    }
+    if (total_minutes > 0) {
+      if (total_minutes === 1) {
+        if (ret_val === "") {
+          ret_val = "1 minute";
+        } else {
+          ret_val = ret_val + " and 1 minute";
+        }
+      } else {
+        if (ret_val === "") {
+          ret_val = total_minutes + " minutes";
+        } else {
+          ret_val = ret_val + " and" +total_minutes +"minutes";
+        }
+      }
+    }
+    return ret_val;
   };
 
   return (
@@ -52,8 +96,8 @@ const AttractionConfirmationScreen = ({
           <div className="item-success-text-content-style">
             <h2 className="item-success-title-style">
               Success! You have added {items[parseInt(index, 10)].title} to your
-              itinerary on {dateInfo.month} {dateInfo.day} for {dateInfo.hour}{" "}
-              hours and {dateInfo.minute} minutes.
+              itinerary on {months[parseInt(dateInfo.month)]} {dateInfo.day} for{" "}
+              {createMessage()}
             </h2>
           </div>
         </div>
