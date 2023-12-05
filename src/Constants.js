@@ -291,43 +291,41 @@ const morganWallen = {
 
 export const event_items = [calgaryStampeders,taylorSwift,dirtyDancing,calgaryHitmen,morganWallen]
 
-// AHHHHHH THIS NEEDS TO BE CHANGED ----------------------------------------------------- change to event item info
-// Currently using attractions because no time
-const hi = {
+const calgaryStampedersInfo = {
   title: "Calgary Stampeders",
-  date: "Wednesday Oct 18th at 9:30pm",
+  date: "Saturday Oct 14th at 7:00pm",
   location: "McMahon stadium",
   picture: calgary_stampeders_event,
 };
 
-const my = {
+const taylorSwiftInfo = {
   title: "Taylor Swift",
-  date: "ahh",
-  location: "wdn",
+  date: "Sunday Oct 15th at 8:30pm",
+  location: "Saddledome",
   picture: taylor_swift_event,
 };
 
-const name = {
+const dirtyDancingInfo = {
   title: "Dirty Dancing",
-  date: "ahh",
-  location: "wdn",
+  date: "Monday Oct 16th at 6:30pm",
+  location: "Southern Alberta Jubilee Auditorium",
   picture: dirty_dancing_event,
 };
 
-const is = {
+const calgaryHitmenInfo = {
   title: 'Calgary Hitmen',
-  date: "ahh",
-  location: "wdn",
+  date: "Tuesday Oct 17th at 4:30pm",
+  location: "Saddledome",
   picture: calgary_hitmen_event
 };
 
-const what = {
+const morganWallenInfo = {
   title: "Morgan Wallen",
-  date: "ahh",
-  location: "wdn",
+  date: "Wednesday Oct 18th at 9:30pm",
+  location: "Saddledome",
   picture: morgan_wallen_event,
 };
 
-export const event_items_info = [hi, my, name, is, what]
+export const event_items_info = [calgaryStampedersInfo,taylorSwiftInfo,dirtyDancingInfo, calgaryHitmenInfo, morganWallenInfo]
 
-// End Events ----------------------------------------------------- still need to change event item info
+// End Events -----------------------------------------------------

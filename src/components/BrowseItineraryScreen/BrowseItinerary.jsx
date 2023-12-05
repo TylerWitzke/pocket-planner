@@ -35,7 +35,7 @@ const BrowseItinerary = ({ items }) => {
         <h2 className="itinerary-header">Itinerary</h2>
 
         {/* Search Bar */}
-        <SearchBar placeholder="Search..." onSearch={handleSearch} />
+        <SearchBar placeholder="Search itinerary..." onSearch={handleSearch} />
 
         {/* Up Next subheading */}
         <h3 className="itinerary-subheading">Up Next:</h3>
@@ -43,7 +43,7 @@ const BrowseItinerary = ({ items }) => {
 
         {/* Later subheading */}
         <h3 className="itinerary-subheading">Later:</h3>
-        <Browse items={items.slice(1)} height={"100px"} />
+        <Browse items={items.slice(1)} height={"300px"} />
 
         {/* Button to view in calendar */}
         <GeneralButton
