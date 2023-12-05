@@ -6,9 +6,10 @@
     padding-top: 30%;
   }
 
-  .image {
+  .pocket-planner-image {
     padding-top: 40px;
     display: flex;
+    width: 200px;
   }
 
   .outer-container {

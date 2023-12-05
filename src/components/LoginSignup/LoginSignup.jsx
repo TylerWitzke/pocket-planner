@@ -21,7 +21,7 @@ const LoginSignup = () => {
 
   return (
     <div className="outer-container">
-      <img src={pocketPlannerImage} alt="Pocket Planner" className="image" />
+      <img src={pocketPlannerImage} alt="Pocket Planner" className="pocket-planner-image" />
       <div className="button-container">
         <GeneralButton
           label="Login"
