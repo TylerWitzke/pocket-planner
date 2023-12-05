@@ -5,7 +5,7 @@ import GeneralButton from "../GeneralButton/GeneralButton";
 import { useNavigate } from "react-router";
 import { useState } from "react";
 
-const MainPage = ({ items }) => {
+const MainPage = ({ items, isLoggedIn }) => {
   const navigate = useNavigate();
   const redirectBack = () => {
     navigate("/");
@@ -71,7 +71,7 @@ const MainPage = ({ items }) => {
         />
 
         {/* For testing: <Browse/> */}
-        <ItineraryWidget onClick={redirectToItinerary} items={items} />
+        {isLoggedIn && <ItineraryWidget onClick={redirectToItinerary} items={items} />}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import GeneralButton from "../GeneralButton/GeneralButton";
 import pocketPlannerImage from "../assets/pocket-planner.png";
 import { useNavigate } from "react-router";
 
-const LoginSignup = () => {
+const LoginSignup = ({setIsLoggedIn}) => {
   const navigate = useNavigate();
 
   const redirectToLogin = () => {
@@ -16,6 +16,7 @@ const LoginSignup = () => {
   };
 
   const redirectToGuest = () => {
+    setIsLoggedIn(false);
     navigate("/main");
   };
 

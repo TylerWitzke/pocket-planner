@@ -6,7 +6,7 @@ import usernameIcon from "../assets/username_icon.png";
 import "./Login.css";
 import { useNavigate } from "react-router";
 
-const Login = () => {
+const Login = ({setIsLoggedIn}) => {
   const navigate = useNavigate();
 
   const redirectBack = () => {
@@ -22,6 +22,7 @@ const Login = () => {
   };
 
   const redirectToMain = () => {
+    setIsLoggedIn(true);
     navigate("/main");
   };
   const [passwordInputValue, setPasswordInputValue] = useState("");

@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 
 import AttractionItem from "../AttractionItem/AttractionItem";
 
-const EventItemScreen = ({ onAddToItinerary }) => {
+const EventItemScreen = ({ onAddToItinerary , isLoggedIn}) => {
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -30,12 +30,12 @@ const EventItemScreen = ({ onAddToItinerary }) => {
       </a>
       <div className="event-item-screen">
         <EventItem {...event_items_info[parseInt(index, 10)]} />
-        <GeneralButton
+        {isLoggedIn && <GeneralButton
           label="Add To Itinerary"
           onClick={redirectToConfirmation}
           paddingBottom="10px"
           paddingTop="10px"
-        />
+        />}
       </div>
     </div>
   );

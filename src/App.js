@@ -29,6 +29,7 @@ import AmenitiesItemScreen from './components/AmenitiesItemScreen/AmenitiesItemS
 
 function App() {
   const [myArray, setMyArray] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const appendElement = (newEvent) => {
     const insertIndex = myArray.findIndex(item => newEvent.date < item.date);
@@ -45,11 +46,11 @@ function App() {
   return (
     <Router basename="/pocket-planner">
     <Routes>
-      <Route path="/" element={<LoginSignup />} />
+      <Route path="/" element={<LoginSignup setIsLoggedIn={setLoggedIn}/>} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login setIsLoggedIn={setLoggedIn}/>} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/main" element={<MainPage items={myArray}/>} />
+      <Route path="/main" element={<MainPage items={myArray} isLoggedIn={loggedIn}/>} />
       <Route path="/itinerary" element={<BrowseItinerary items={myArray}/>} />
       <Route path="/attractions" element={<BrowseAttractions/>} />
       <Route path="/events" element={<BrowseEvents/>} />
@@ -60,9 +61,9 @@ function App() {
       <Route path="/itineraryItem" element={<ItineraryItemInfo/>} />
       <Route path="/item-info/:type/:id" element={ItemInfo} />
       <Route path="/c" element={<BasicDateCalendar items={myArray}/>} />
-      <Route path="/attractionttemscreen" element={<AttractionItemScreen/>} />
-      <Route path="/amenitieitemscreen" element={<AmenitiesItemScreen/>} />
-      <Route path="/eventitemscreen" element={<EventItemScreen/>} />
+      <Route path="/attractionttemscreen" element={<AttractionItemScreen isLoggedIn={loggedIn}/>} />
+      <Route path="/amenitieitemscreen" element={<AmenitiesItemScreen isLoggedIn={loggedIn}/>} />
+      <Route path="/eventitemscreen" element={<EventItemScreen isLoggedIn={loggedIn}/>} />
       <Route path="/additem" element={<AddItem/>} />
 
     </Routes>

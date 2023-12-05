@@ -8,7 +8,7 @@ import { useNavigate } from "react-router";
 import { amenitie_items_info } from "../../Constants";
 import { useLocation } from "react-router-dom";
 
-const AmenitiesItemScreen = ({ onAddToItinerary }) => {
+const AmenitiesItemScreen = ({ onAddToItinerary, isLoggedIn }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -29,12 +29,12 @@ const AmenitiesItemScreen = ({ onAddToItinerary }) => {
       </a>
       <div className="attraction-item-screen">
         <AttractionItem {...amenitie_items_info[parseInt(index, 10)]} />
-        <GeneralButton
+        {isLoggedIn && <GeneralButton
           label="Add to Itinerary"
           onClick={redirectToItinerary}
           paddingBottom="5px"
           paddingTop="5px"
-        />
+        />}
       </div>
     </div>
   );
