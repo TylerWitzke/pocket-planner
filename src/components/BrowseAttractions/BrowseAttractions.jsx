@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./BrowseAttractions.css"; // Import the CSS file
 import SearchBar from "../SearchBar/SearchBar";
@@ -8,6 +8,7 @@ import { attraction_items } from "../../Constants";
 import RadioButton from "../RadioButton/RadioButton";
 
 const BrowseAttractions = () => {
+  const [itemArray, setItemArray] = useState(attraction_items);
   const navigate = useNavigate();
   const redirectBack = () => {
     navigate(-1);
@@ -30,14 +31,18 @@ const BrowseAttractions = () => {
         <h1>Attractions</h1>
         <RadioButton
           options={[
-            { value: "option1", label: "All" },
-            { value: "option2", label: "Nearby" },
-            { value: "option3", label: "Top Rated" },
-            { value: "option4", label: "Popular" },
+            { value: "All", label: "All" },
+            { value: "nearby", label: "Nearby" },
+            { value: "top-rated", label: "Top Rated" },
+            { value: "popular", label: "Popular" },
           ]}
           onChange={(selectedOption) => {
-            console.log("Selected option:", selectedOption);
-            // Need to add logic here
+            if(selectedOption === "All") {
+              setItemArray(attraction_items);
+            } else {
+            const matchingEvents = attraction_items.filter(item => item.type.includes(selectedOption));
+            setItemArray(matchingEvents);
+          }
           }}
         />
         <SearchBar
@@ -45,7 +50,7 @@ const BrowseAttractions = () => {
           onSearch={handleSearch}
         />
         <Browse
-          items={attraction_items}
+          items={itemArray}
           height={"550px"}
           onClick={routeToAttractionScreen}
         />

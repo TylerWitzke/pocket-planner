@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./BrowseAmenities.css"; // Import the CSS file
 import SearchBar from "../SearchBar/SearchBar";
@@ -8,6 +8,7 @@ import RadioButton from "../RadioButton/RadioButton";
 import { amenitie_items } from "../../Constants";
 
 const BrowseAmenities = () => {
+  const [itemArray, setItemArray] = useState(amenitie_items);
   const navigate = useNavigate();
   const redirectBack = () => {
     navigate(-1);
@@ -31,14 +32,18 @@ const BrowseAmenities = () => {
 
         <RadioButton
           options={[
-            { value: "option1", label: "All" },
-            { value: "option2", label: "Nearby" },
-            { value: "option3", label: "Top Rated" },
-            { value: "option4", label: "Popular" },
+            { value: "All", label: "All" },
+            { value: "nearby", label: "Nearby" },
+            { value: "top-rated", label: "Top Rated" },
+            { value: "popular", label: "Popular" },
           ]}
           onChange={(selectedOption) => {
-            console.log("Selected option:", selectedOption);
-            // Need to add logic here
+            if(selectedOption === "All") {
+              setItemArray(amenitie_items);
+            } else {
+            const matchingEvents = amenitie_items.filter(item => item.type.includes(selectedOption));
+            setItemArray(matchingEvents);
+          }
           }}
         />
         <SearchBar
@@ -46,7 +51,7 @@ const BrowseAmenities = () => {
           onSearch={handleSearch}
         />
         <Browse
-          items={amenitie_items}
+          items={itemArray}
           height={"550px"}
           onClick={routeToAmenitiesScreen}
         />

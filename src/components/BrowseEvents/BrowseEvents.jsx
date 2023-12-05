@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./BrowseEvents.css"; // Import the CSS file
 import SearchBar from "../SearchBar/SearchBar";
@@ -8,6 +8,7 @@ import { event_items } from "../../Constants";
 import RadioButton from "../RadioButton/RadioButton";
 
 const BrowseEvents = () => {
+  const [itemArray, setItemArray] = useState(event_items);
   const navigate = useNavigate();
   const redirectBack = () => {
     navigate(-1);
@@ -32,19 +33,23 @@ const BrowseEvents = () => {
 
         <RadioButton
           options={[
-            { value: "option1", label: "All" },
-            { value: "option2", label: "Nearby" },
-            { value: "option3", label: "Top Rated" },
-            { value: "option4", label: "Popular" },
+            { value: "All", label: "All" },
+            { value: "sport", label: "Sports" },
+            { value: "music", label: "Music" },
+            { value: "show", label: "Shows" },
           ]}
           onChange={(selectedOption) => {
-            console.log("Selected option:", selectedOption);
-            // Need to add logic here
+            if(selectedOption === "All") {
+              setItemArray(event_items);
+            } else {
+            const matchingEvents = event_items.filter(item => item.type.includes(selectedOption));
+            setItemArray(matchingEvents);
+          }
           }}
         />
         <SearchBar placeholder="Search for events..." onSearch={handleSearch} />
         <Browse
-          items={event_items}
+          items={itemArray}
           height={"550px"}
           onClick={routeToEventItemScreen}
         />

@@ -25,7 +25,8 @@ const bigBlueRing = {
     info2: "Open 24 hours",
     info3: "Rating: 5/5",
     picture: big_blue_ring_attraction,
-    id: 0
+    id: 0,
+    type: ["top-rated"]
 };
 
 const calawayPark = {
@@ -35,7 +36,8 @@ const calawayPark = {
     info2: "Open 10am - 9pm",
     info3: "Rating: 4/5",
     picture: calaway_park_attraction,
-    id: 1
+    id: 1,
+    type: ["top-rated", "popular"]
 };
 
 const calgaryTower = {
@@ -45,17 +47,19 @@ const calgaryTower = {
     info2: "Open  10am - 1am",
     info3: "Rating: 4/5",
     picture: calgary_tower_attraction,
-    id: 2
+    id: 2,
+    type: ["top-rated", "popular"]
 };
 
 const heritagePark = {
     onClick: () => { console.log("heritagePark"); },
     title: "Heritage Park",
-    info1: "Amusement park - 3.2km",
+    info1: "Amusement park - 1.5km",
     info2: "Open 8am to 6pm",
     info3: "Rating: 2/5",
     picture: heritage_park_attraction,
-    id: 3
+    id: 3,
+    type: ["nearby"]
 
 };
 
@@ -66,7 +70,8 @@ const olympicPlaza = {
     info2: "Open 24 hours",
     info3: "Rating: 2/5",
     picture: oplympic_plaza_attraction,
-    id: 4
+    id: 4,
+    type: []
 };
 
 export const attraction_items = [bigBlueRing,calawayPark,calgaryTower,heritagePark,olympicPlaza]
@@ -133,7 +138,8 @@ const barbarella = {
   info3: "Rating: 5/5",
   picture: barbarella_amenity,
   id: 0,
-  date: null
+  date: null,
+  type: ["nearby", "top-rated", "popular"]
 };
 
 const anytimeFitness = {
@@ -143,7 +149,8 @@ const anytimeFitness = {
   info3: "Rating: 4/5",
   picture: anytime_fitness_amenity,
   id: 1,
-  date: null
+  date: null,
+  type: ["top-rated"]
 };
 
 const marketMall = {
@@ -153,7 +160,8 @@ const marketMall = {
   info3: "Rating: 3.5/5",
   picture: market_mall_amenity,
   id: 2,
-  date: null
+  date: null,
+  type: ["popular"]
 };
 
 const foothillsMedical = {
@@ -163,7 +171,8 @@ const foothillsMedical = {
   info3: "Rating: 2/5",
   picture: foothills_medical_amenity,
   id: 3,
-  date: null
+  date: null,
+  type: ["popular"]
 };
 
 const sevenEleven= {
@@ -173,7 +182,8 @@ const sevenEleven= {
   info3: "Rating: 2/5",
   picture: seven_eleven_amenity,
   id: 4,
-  date: null
+  date: null,
+  type: []
 };
 
 export const amenitie_items = [barbarella,anytimeFitness,marketMall,foothillsMedical,sevenEleven]
@@ -242,7 +252,8 @@ const calgaryStampeders = {
   info3: "McMahon stadium",
   picture: calgary_stampeders_event,
   id: 0,
-  date: new Date(2023, 9, 14)
+  date: new Date(2023, 9, 14),
+  type: ["sport"]
 };
 
 const taylorSwift= {
@@ -253,7 +264,8 @@ const taylorSwift= {
   info3: "Saddledome",
   picture: taylor_swift_event,
   id: 1,
-  date: new Date(2023, 9, 15)
+  date: new Date(2023, 9, 15),
+  type: ["music"]
 };
 
 const dirtyDancing = {
@@ -264,7 +276,8 @@ const dirtyDancing = {
   info3: "Southern Alberta Jubilee Auditorium",
   picture: dirty_dancing_event,
   id: 2,
-  date: new Date(2023, 9, 16)
+  date: new Date(2023, 9, 16),
+  type: ["show"]
 };
 
 const calgaryHitmen = {
@@ -275,7 +288,8 @@ const calgaryHitmen = {
   info3: "Saddledome",
   picture: calgary_hitmen_event,
   id: 3,
-  date: new Date(2023, 9, 17)
+  date: new Date(2023, 9, 17),
+  type: ["sport"]
 };
 
 const morganWallen = {
@@ -286,7 +300,8 @@ const morganWallen = {
   info3: "Saddledome",
   picture: morgan_wallen_event,
   id: 4,
-  date: new Date(2023, 9, 18)
+  date: new Date(2023, 9, 18),
+  type: ["music"]
 };
 
 export const event_items = [calgaryStampeders,taylorSwift,dirtyDancing,calgaryHitmen,morganWallen]

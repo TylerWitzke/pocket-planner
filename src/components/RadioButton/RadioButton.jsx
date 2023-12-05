@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 const RadioButton = ({ options, onChange }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState('All');
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
