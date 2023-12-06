@@ -8,6 +8,8 @@ import { useLocation } from "react-router-dom";
 import { attraction_items_info } from "../../Constants";
 import { event_items_info } from "../../Constants";
 import { amenitie_items_info } from "../../Constants";
+import { amenitie_items } from "../../Constants";
+import { attraction_items } from "../../Constants";
 
 const ItineraryItemInfo = ({
   onEditDetails,
@@ -21,6 +23,17 @@ const queryParams = new URLSearchParams(location.search);
 
 const item_id = queryParams.get("itemid");
 const item_type = queryParams.get("itemtype");
+
+const formatter = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+  hour12: true,
+  timeZone: 'UTC', // Set to 'UTC' to omit time zone information
+});
 
 const redirectBack = () => {
   navigate(-1);
@@ -48,10 +61,12 @@ if(item_type == "event"){
 if(item_type == "amenity"){
   item_to_display = amenitie_items_info[parseInt(item_id, 10)]
   is_event = false;
+  item_to_display.date = formatter.format(amenitie_items[parseInt(item_id, 10)].date);
 }
 if(item_type == "attraction"){
   item_to_display = attraction_items_info[parseInt(item_id, 10)]
   is_event = false;
+  item_to_display.date = formatter.format(attraction_items[parseInt(item_id, 10)].date);
 }
 
   return (

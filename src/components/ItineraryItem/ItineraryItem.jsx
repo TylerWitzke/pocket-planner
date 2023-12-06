@@ -9,7 +9,7 @@ const ItineraryItem = ({
   picture,
   locationName,
   contact,
-  dateTime,
+  date,
   duration,
 }) => {
   return (
@@ -42,7 +42,7 @@ const ItineraryItem = ({
           <div className="contact-hours-container">
             {/* Container for hours */}
             <span className="info-label">Date & Time:</span>
-            <span className="itinerary-item-info">{dateTime}</span>
+            <span className="itinerary-item-info">{date}</span>
           </div>
 
           <div className="contact-hours-container">

@@ -324,6 +324,9 @@ const calgaryStampedersInfo = {
   title: "Calgary Stampeders",
   date: "Saturday Oct 14th at 7:00pm",
   location: "McMahon stadium",
+  locationName: "McMahon stadium",
+  contact: '(587)-111-2942',
+  duration: '3 hours',
   picture: calgary_stampeders_event,
 };
 
@@ -331,6 +334,9 @@ const taylorSwiftInfo = {
   title: "Taylor Swift",
   date: "Sunday Oct 15th at 8:30pm",
   location: "Saddledome",
+  locationName: "Saddledome",
+  contact: '(587)-111-2988',
+  duration: '5 hours',
   picture: taylor_swift_event,
 };
 
@@ -338,6 +344,9 @@ const dirtyDancingInfo = {
   title: "Dirty Dancing",
   date: "Monday Oct 16th at 6:30pm",
   location: "Southern Alberta Jubilee Auditorium",
+  locationName: "Southern Alberta Jubilee Auditorium",
+  contact: '(587)-111-2901',
+  duration: '2 hours 30 minutes',
   picture: dirty_dancing_event,
 };
 
@@ -345,6 +354,9 @@ const calgaryHitmenInfo = {
   title: 'Calgary Hitmen',
   date: "Tuesday Oct 17th at 4:30pm",
   location: "Saddledome",
+  locationName: "Saddledome",
+  contact: '(587)-111-2988',
+  duration: '3 hours',
   picture: calgary_hitmen_event
 };
 
@@ -352,6 +364,9 @@ const morganWallenInfo = {
   title: "Morgan Wallen",
   date: "Wednesday Oct 18th at 9:30pm",
   location: "Saddledome",
+  locationName: "Saddledome",
+  contact: '(587)-111-2988',
+  duration: '4 hours',
   picture: morgan_wallen_event,
 };
 
