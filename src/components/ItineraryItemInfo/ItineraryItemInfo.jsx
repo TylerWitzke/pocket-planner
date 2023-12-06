@@ -6,6 +6,9 @@ import "./ItineraryItemInfo.css"; // Import CSS file
 import calaway_attraction from "../assets/calaway_attraction.jpg";
 import { useNavigate } from "react-router";
 import { useLocation } from "react-router-dom";
+import { attraction_items_info } from "../../Constants";
+import { event_items_info } from "../../Constants";
+import { amenitie_items_info } from "../../Constants";
 
 const ItineraryItemInfo = ({
   onEditDetails,
@@ -13,16 +16,29 @@ const ItineraryItemInfo = ({
   onBackToMainMenu,
 }) => {
 
-  const navigate = useNavigate();
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
+const navigate = useNavigate();
+const location = useLocation();
+const queryParams = new URLSearchParams(location.search);
 
-  const item_id = queryParams.get("itemid");
-  const item_type = queryParams.get("itemtype");
+const item_id = queryParams.get("itemid");
+const item_type = queryParams.get("itemtype");
 
-  const redirectBack = () => {
-    navigate(-1);
-  };
+const redirectBack = () => {
+  navigate(-1);
+};
+
+let item_to_display;
+if(item_type == "event"){
+  item_to_display = event_items_info[parseInt(item_id, 10)]
+}
+if(item_type == "amenity"){
+  item_to_display = amenitie_items_info[parseInt(item_id, 10)]
+}
+if(item_type == "attraction"){
+  item_to_display = attraction_items_info[parseInt(item_id, 10)]
+}
+
+
 
 
   const itineraryDetails = {
@@ -41,8 +57,7 @@ const ItineraryItemInfo = ({
       </a>
 
       <div className="itinerary-item-info-container">
-        <h1> hello id {item_id} and type {item_type}</h1>
-        <ItineraryItem {...itineraryDetails} />
+        <ItineraryItem {...item_to_display} />
 
         {/* Include GeneralButton components */}
         <GeneralButton

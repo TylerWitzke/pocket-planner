@@ -6,30 +6,52 @@ import "./ItineraryItem.css"; // Update the import
 
 const ItineraryItem = ({
   title,
-  onClick,
-  location,
+  picture,
+  locationName,
   contact,
   dateTime,
   duration,
-  picture,
 }) => {
   return (
-    <div className="container" onClick={onClick}>
-      <div className="details">
-        <h2 className="title">{title}</h2>
-        <img src={picture} alt="Itinerary" className="image" />
-        <p className="info" data-label="Location:">
-          <span style={{ color: "blue" }}>{location}</span>
-        </p>
-        <p className="info" data-label="Contact:">
-          <span style={{ color: "blue" }}>{contact}</span>
-        </p>
-        <p className="info" data-label="Date & Time:">
-          {dateTime}
-        </p>
-        <p className="info" data-label="Duration:">
-          {duration}
-        </p>
+
+    <div className="itinerary-item-container">
+      <div className="itinerary-item-text-content">
+        <h2 className="itinerary-item-title">{title}</h2>
+        <div className="itinerary-item-picture-container">
+          <img src={picture} alt={title} className="itinerary-item-picture" />
+        </div>
+        <div className="itinerary-item-details-container">
+          <div className="itinerary-item-info">
+            {/* Location details */}
+            <span className="info-label">Location:</span>
+            <div className="location-details">
+              <span className="info-value" style={{ color: "blue" }}>
+                {locationName}
+              </span>
+            </div>
+          </div>
+
+          <div className="itinerary-item-info">
+            {/* Contact details */}
+            <span className="info-label">Contact:</span>
+            <span className="info-value" style={{ color: "blue" }}>
+              {contact}
+            </span>
+          </div>
+
+          <div className="contact-hours-container">
+            {/* Container for hours */}
+            <span className="info-label">Date & Time:</span>
+            <span className="itinerary-item-info">{dateTime}</span>
+          </div>
+
+          <div className="contact-hours-container">
+            {/* Container for hours */}
+            <span className="info-label">Duration:</span>
+            <span className="itinerary-item-info">{duration}</span>
+          </div>
+
+        </div>
       </div>
     </div>
   );
