@@ -69,6 +69,11 @@ if(item_type == "attraction"){
   item_to_display.date = formatter.format(attraction_items[parseInt(item_id, 10)].date);
 }
 
+const deleteItem = () => {
+  onDeleteItem(item_id, item_type);
+  redirectBack();
+}
+
   return (
     <div>
       <a href="#" onClick={redirectBack}>
@@ -87,7 +92,7 @@ if(item_type == "attraction"){
         />}
         <GeneralButton
           label="Delete this item"
-          onClick={onDeleteItem}
+          onClick={deleteItem}
           paddingBottom="5px"
           paddingTop="5px"
         />

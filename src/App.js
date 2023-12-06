@@ -43,6 +43,13 @@ function App() {
     }
   };
 
+  const deleteElement = (item_id, item_type) => {
+    console.log(typeof(item_id))
+    console.log(typeof(item_type))
+    const newArray = myArray.filter(item => !(item.id.toString() === item_id && item.item_type === item_type));
+    setMyArray(newArray);
+  }
+
   return (
     <Router basename="/pocket-planner">
     <Routes>
@@ -58,7 +65,7 @@ function App() {
       <Route path="/eventconfirmation" element={<EventConfirmationScreen updateListFunction={appendElement}/>} />
       <Route path="/attractionconfirmation" element={<AttractionConfirmationScreen updateListFunction={appendElement}/>} />
       <Route path="/search-bar" element={<SearchBar/>} />
-      <Route path="/itineraryItem" element={<ItineraryItemInfo/>} />
+      <Route path="/itineraryItem" element={<ItineraryItemInfo onDeleteItem={deleteElement}/>} />
       <Route path="/item-info/:type/:id" element={ItemInfo} />
       <Route path="/c" element={<BasicDateCalendar items={myArray}/>} />
       <Route path="/attractionttemscreen" element={<AttractionItemScreen isLoggedIn={loggedIn}/>} />
