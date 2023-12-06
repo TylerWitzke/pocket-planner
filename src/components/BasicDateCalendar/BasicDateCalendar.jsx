@@ -30,6 +30,11 @@ export default function BasicDateCalendar({ items }) {
     setItemArray(matchingEvents);
   };
 
+  const itemClick = (id, item_type) => {
+    console.log(`Clicked on item_type: ${item_type}, id: ${id}`);
+    navigate("/itineraryItem?itemid=" +id+ "&itemtype=" +item_type);
+  };
+
   return (
     <div>
       <a href="#" onClick={redirectBack}>
@@ -38,7 +43,7 @@ export default function BasicDateCalendar({ items }) {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DateCalendar onChange={temp} />
       </LocalizationProvider>
-      <Browse items={itemArray} height={"480px"} />
+      <Browse items={itemArray} height={"480px"} onClick={itemClick}/>
     </div>
   );
 }
