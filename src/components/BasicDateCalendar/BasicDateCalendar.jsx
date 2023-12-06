@@ -38,7 +38,7 @@ export default function BasicDateCalendar({ items }) {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DateCalendar onChange={temp} />
       </LocalizationProvider>
-      <Browse items={itemArray} height={"300px"} />
+      <Browse items={itemArray} height={"480px"} />
     </div>
   );
 }
