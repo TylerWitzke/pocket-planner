@@ -51,12 +51,6 @@ const EventConfirmationScreen = ({
         </div>
         {/* Include GeneralButton components */}
         <GeneralButton
-          label="Edit details"
-          onClick={redirectBack}
-          paddingBottom="10px"
-          paddingTop="10px"
-        />
-        <GeneralButton
           label="Delete this item"
           onClick={redirectMain}
           paddingBottom="10px"

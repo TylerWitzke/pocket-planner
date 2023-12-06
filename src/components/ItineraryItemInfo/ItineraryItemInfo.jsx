@@ -30,15 +30,28 @@ const redirectMain = () => {
   navigate("/main");
 };
 
+const onEditDetailsFromItinerary = () => {
+  if(item_type == "amenity"){
+    navigate("/additem?itemid=" +item_id+ "&page=amenities")
+  }
+  else if(item_type == "attraction"){
+    navigate("/additem?itemid=" +item_id+ "&page=attraction")
+  }
+}
+
+let is_event;
 let item_to_display;
 if(item_type == "event"){
   item_to_display = event_items_info[parseInt(item_id, 10)]
+  is_event = true;
 }
 if(item_type == "amenity"){
   item_to_display = amenitie_items_info[parseInt(item_id, 10)]
+  is_event = false;
 }
 if(item_type == "attraction"){
   item_to_display = attraction_items_info[parseInt(item_id, 10)]
+  is_event = false;
 }
 
   return (
@@ -51,12 +64,12 @@ if(item_type == "attraction"){
         <ItineraryItem {...item_to_display} />
 
         {/* Include GeneralButton components */}
-        <GeneralButton
+        {!is_event && <GeneralButton
           label="Edit this Item"
-          onClick={onEditDetails}
+          onClick={onEditDetailsFromItinerary}
           paddingBottom="5px"
           paddingTop="5px"
-        />
+        />}
         <GeneralButton
           label="Delete this item"
           onClick={onDeleteItem}
