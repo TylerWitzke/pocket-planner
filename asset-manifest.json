@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pocket-planner/static/css/main.864fb042.css",
-    "main.js": "/pocket-planner/static/js/main.38015401.js",
+    "main.css": "/pocket-planner/static/css/main.9f49f790.css",
+    "main.js": "/pocket-planner/static/js/main.d7a128ad.js",
     "static/js/787.6c618d22.chunk.js": "/pocket-planner/static/js/787.6c618d22.chunk.js",
     "static/media/ex_machina.jpg": "/pocket-planner/static/media/ex_machina.f249c7bacef66abd5e1d.jpg",
     "static/media/email_icon.png": "/pocket-planner/static/media/email_icon.52cafc53403ad83e47c4.png",
@@ -19,12 +19,12 @@
     "static/media/barbarella_amenity.jpg": "/pocket-planner/static/media/barbarella_amenity.fc23a02d847207f30e0c.jpg",
     "static/media/anytime_fitness_amenity.jpg": "/pocket-planner/static/media/anytime_fitness_amenity.f27a54d846d0f6696081.jpg",
     "index.html": "/pocket-planner/index.html",
-    "main.864fb042.css.map": "/pocket-planner/static/css/main.864fb042.css.map",
-    "main.38015401.js.map": "/pocket-planner/static/js/main.38015401.js.map",
+    "main.9f49f790.css.map": "/pocket-planner/static/css/main.9f49f790.css.map",
+    "main.d7a128ad.js.map": "/pocket-planner/static/js/main.d7a128ad.js.map",
     "787.6c618d22.chunk.js.map": "/pocket-planner/static/js/787.6c618d22.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.864fb042.css",
-    "static/js/main.38015401.js"
+    "static/css/main.9f49f790.css",
+    "static/js/main.d7a128ad.js"
   ]
 }
