@@ -80,7 +80,7 @@ const AttractionConfirmationScreen = ({
     if (date_hour < 10) {
       ret_val = "0" + date_hour
     } else {
-      ret_val = date_hour + " hours";
+      ret_val = date_hour;
     }
 
     console.log("retval after hour conversion: " + ret_val)

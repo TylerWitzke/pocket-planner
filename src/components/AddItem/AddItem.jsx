@@ -7,7 +7,6 @@ import { attraction_items, amenitie_items } from "../../Constants";
 import { useLocation } from "react-router-dom";
 
 const months = [
-  "Month",
   "Jan",
   "Feb",
   "Mar",
@@ -21,25 +20,18 @@ const months = [
   "Nov",
   "Dec",
 ];
-const days = ["Day", ...Array.from({ length: 31 }, (_, i) => i + 1)];
+const days = [...Array.from({ length: 31 }, (_, i) => i + 1)];
 
 const currentYear = new Date().getFullYear();
 const years = [
-  "Year",
   ...Array.from({ length: 10 }, (_, i) => currentYear + i),
 ];
 
-const hours = ["Hours", ...Array.from({ length: 24 }, (_, i) => i)];
-const minutes = ["Minutes", ...Array.from({ length: 60 }, (_, i) => i)];
+const hours = [...Array.from({ length: 24 }, (_, i) => i)];
+const minutes = [...Array.from({ length: 60 }, (_, i) => i)];
 
-const durationhours = ["Hours", ...Array.from({ length: 24 }, (_, i) => i)];
-const durationminutes = ["Minutes", ...Array.from({ length: 60 }, (_, i) => i)];
-
-// const hours = ["Hours", ...Array.from({ length: 24 }, (_, i) => i + "hr")];
-// const minutes = ["Minutes", ...Array.from({ length: 60 }, (_, i) => i + "min")];
-
-// const durationhours = ["Hours", ...Array.from({ length: 24 }, (_, i) => i + "hr")];
-// const durationminutes = ["Minutes", ...Array.from({ length: 60 }, (_, i) => i + "min")];
+const durationhours = [...Array.from({ length: 24 }, (_, i) => i)];
+const durationminutes = [...Array.from({ length: 60 }, (_, i) => i)];
 
 export let dateInfo = {
   month: -1,
