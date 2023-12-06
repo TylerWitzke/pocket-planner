@@ -257,11 +257,11 @@ const calgaryStampeders = {
   onClick: () => { console.log("bigBlueRing"); },
   title: "Calgary Stampeders",
   info1: "vs Winnipeg Blye Bombers",
-  info2: "Saturday Oct 14th at 7:00pm",
+  info2: "Thursday Dec 14th at 7:00pm",
   info3: "McMahon stadium",
   picture: calgary_stampeders_event,
   id: 0,
-  date: new Date(2023, 9, 14),
+  date: new Date(2023, 11, 14),
   type: ["sport"],
   item_type: "event"
 };
@@ -270,11 +270,11 @@ const taylorSwift= {
   onClick: () => { console.log("calawayPark"); },
   title: "Taylor Swift",
   info1: "The Eras Tour",
-  info2: "Sunday Oct 15th at 8:30pm",
+  info2: "Friday Dec 15th at 8:30pm",
   info3: "Saddledome",
   picture: taylor_swift_event,
   id: 1,
-  date: new Date(2023, 9, 15),
+  date: new Date(2023, 11, 15),
   type: ["music"],
   item_type: "event"
 };
@@ -283,11 +283,11 @@ const dirtyDancing = {
   onClick: () => { console.log("calgaryTower"); },
   title: "Dirty Dancing",
   info1: "Live play",
-  info2: "Monday Oct 16th at 6:30pm",
+  info2: "Saturday Dec 16th at 6:30pm",
   info3: "Southern Alberta Jubilee Auditorium",
   picture: dirty_dancing_event,
   id: 2,
-  date: new Date(2023, 9, 16),
+  date: new Date(2023, 11, 16),
   type: ["show"],
   item_type: "event"
 };
@@ -296,11 +296,11 @@ const calgaryHitmen = {
   onClick: () => { console.log("heritagePark"); },
   title: "Calgary Hitmen",
   info1: "vs Edmonton Oil Kings",
-  info2: "Tuesday Oct 17th at 4:30pm",
+  info2: "Sunday Dec 17th at 4:30pm",
   info3: "Saddledome",
   picture: calgary_hitmen_event,
   id: 3,
-  date: new Date(2023, 9, 17),
+  date: new Date(2023, 11, 17),
   type: ["sport"],
   item_type: "event"
 };
@@ -309,11 +309,11 @@ const morganWallen = {
   onClick: () => { console.log("olympicPlaza"); },
   title: "Morgan Wallen",
   info1: "One Night at a Time",
-  info2: "Wednesday Oct 18th at 9:30pm",
+  info2: "Monday Dec 18th at 9:30pm",
   info3: "Saddledome",
   picture: morgan_wallen_event,
   id: 4,
-  date: new Date(2023, 9, 18),
+  date: new Date(2023, 11, 18),
   type: ["music"],
   item_type: "event"
 };
