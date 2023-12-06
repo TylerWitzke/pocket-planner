@@ -27,6 +27,7 @@ const BrowseItinerary = ({ items }) => {
 
   const itemClick = (id, item_type) => {
     console.log(`Clicked on item_type: ${item_type}, id: ${id}`);
+    navigate("/itineraryItem?itemid=" +id+ "&itemtype=" +item_type);
   };
 
   return (

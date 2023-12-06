@@ -4,12 +4,27 @@ import GeneralButton from "../GeneralButton/GeneralButton"; // Import the Genera
 import ItineraryItem from "../ItineraryItem/ItineraryItem";
 import "./ItineraryItemInfo.css"; // Import CSS file
 import calaway_attraction from "../assets/calaway_attraction.jpg";
+import { useNavigate } from "react-router";
+import { useLocation } from "react-router-dom";
 
 const ItineraryItemInfo = ({
   onEditDetails,
   onDeleteItem,
   onBackToMainMenu,
 }) => {
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  const item_id = queryParams.get("itemid");
+  const item_type = queryParams.get("itemtype");
+
+  const redirectBack = () => {
+    navigate(-1);
+  };
+
+
   const itineraryDetails = {
     title: "Calaway Park",
     location: "Calaway Park - 245033 Range Rd 33",
@@ -21,15 +36,12 @@ const ItineraryItemInfo = ({
 
   return (
     <div>
-      <a
-        href="#"
-        onClick={() => {
-          console.log("Go back");
-        }}
-      >
+      <a href="#" onClick={redirectBack}>
         Back
       </a>
+
       <div className="itinerary-item-info-container">
+        <h1> hello id {item_id} and type {item_type}</h1>
         <ItineraryItem {...itineraryDetails} />
 
         {/* Include GeneralButton components */}
