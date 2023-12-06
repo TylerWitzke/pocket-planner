@@ -11,10 +11,11 @@ const Item = ({
   picture,
   borderCol,
   id,
+  item_type,
 }) => {
   const handleClick = (e) => {
     e.stopPropagation(); // This will prevent the event from bubbling up to parent elements
-    onClick(id); // Call the onClick handler passed to the Item
+    onClick(id, item_type); // Call the onClick handler passed to the Item
   };
 
   return (

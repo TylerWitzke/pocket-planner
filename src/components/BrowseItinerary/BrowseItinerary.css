@@ -7,17 +7,17 @@
     align-items: center;
     padding: 20px; /* padding */
   }
-  
+
   /* Styling for the header */
   .itinerary-header {
     color: black;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
   }
-  
+
   /* Styling for the subheadings */
   .itinerary-subheading {
     color: black;
-    margin-top: 15px; 
+    margin-top: 15px;
   }
 
   .item-picture-style {

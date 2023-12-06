@@ -25,6 +25,10 @@ const BrowseItinerary = ({ items }) => {
     console.log(`Searching for: ${searchTerm}`);
   };
 
+  const itemClick = (id, item_type) => {
+    console.log(`Clicked on item_type: ${item_type}, id: ${id}`);
+  };
+
   return (
     <div>
       <a href="#" onClick={redirectBack}>
@@ -39,11 +43,11 @@ const BrowseItinerary = ({ items }) => {
 
         {/* Up Next subheading */}
         <h3 className="itinerary-subheading">Up Next:</h3>
-        <Item {...items[0]} />
+        <Item {...items[0] } onClick={itemClick}/>
 
         {/* Later subheading */}
         <h3 className="itinerary-subheading">Later:</h3>
-        <Browse items={items.slice(1)} height={"300px"} />
+        <Browse items={items.slice(1)} height={"300px"} onClick={itemClick}/>
 
         {/* Button to view in calendar */}
         <GeneralButton

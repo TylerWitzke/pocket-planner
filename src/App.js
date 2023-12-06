@@ -8,7 +8,7 @@ import ItemInfo from './components/ItemInfo/ItemInfo';
 import ItineraryItemInfo from './components/ItineraryItemInfo/ItineraryItemInfo';
 import SearchBar from './components/SearchBar/SearchBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import BrowseItinerary from './components/BrowseItineraryScreen/BrowseItinerary';
+import BrowseItinerary from './components/BrowseItinerary/BrowseItinerary';
 import EventConfirmationScreen from './components/EventConfirmationScreen/EventConfirmationScreen';
 import AttractionConfirmationScreen from './components/AttractionConfirmationScreen/AttractionConfirmationScreen';
 import BasicDateCalendar from './components/BasicDateCalendar/BasicDateCalendar';

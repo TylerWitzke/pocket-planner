@@ -17,6 +17,7 @@ const Browse = ({ items, height, onClick }) => {
               picture={item.picture}
               borderCol={item.borderCol}
               id={item.id}
+              item_type={item.item_type}
             />
           </li>
         ))}
