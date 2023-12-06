@@ -8,6 +8,7 @@ import blue_ring_attraction from "../assets/blue_ring_attraction.jpg";
 import Item from "../Item/Item"; // Import the Item component
 import { attraction_items, amenitie_items } from "../../Constants";
 import { dateInfo } from "../AddItem/AddItem";
+import { durationInfo } from "../AddItem/AddItem";
 import { useNavigate } from "react-router";
 import { useLocation } from "react-router-dom";
 
@@ -50,15 +51,55 @@ const AttractionConfirmationScreen = ({
     items[parseInt(index, 10)].date = new Date(
       dateInfo.year,
       dateInfo.month,
-      dateInfo.day
+      dateInfo.day,
+      dateInfo.hour,
+      dateInfo.minute,
     );
+
+    items[parseInt(index, 10)].duration = new Date(
+      dateInfo.year,  // dummy, won't be used
+      dateInfo.month, // dummy, won't be used
+      dateInfo.day,   // dummy, won't be used
+      durationInfo.hour,
+      durationInfo.minute,
+    )
+
     updateListFunction(items[parseInt(index, 10)]);
     redirectMain();
   };
 
+  const createClockTime = () => {
+    // const date_hour = parseInt(dateInfo.hour.slice(0, -2));
+    // const date_minute = parseInt(dateInfo.minute.slice(0, -3));
+
+    const date_hour = dateInfo.hour;
+    const date_minute = dateInfo.minute;
+
+    let ret_val = "";
+
+    if (date_hour < 10) {
+      ret_val = "0" + date_hour
+    } else {
+      ret_val = date_hour + " hours";
+    }
+
+    console.log("retval after hour conversion: " + ret_val)
+
+    if (date_minute < 10) {
+      ret_val = ret_val + ":0" + date_minute;
+    } else {
+      ret_val = ret_val + ":" + date_minute;
+    }
+    return ret_val;
+  };
+
   const createMessage = () => {
-    const total_hours = parseInt(dateInfo.hour.slice(0, -2));
-    const total_minutes = parseInt(dateInfo.minute.slice(0, -3));
+    // const total_hours = parseInt(durationInfo.hour.slice(0, -2));
+    // const total_minutes = parseInt(durationInfo.minute.slice(0, -3));
+
+    const total_hours = durationInfo.hour;
+    const total_minutes = durationInfo.minute;
+
     let ret_val = "";
     if (total_hours > 0) {
       if (total_hours === 1) {
@@ -78,7 +119,7 @@ const AttractionConfirmationScreen = ({
         if (ret_val === "") {
           ret_val = total_minutes + " minutes";
         } else {
-          ret_val = ret_val + " and" +total_minutes +"minutes";
+          ret_val = ret_val + " and " +total_minutes +" minutes";
         }
       }
     }
@@ -96,7 +137,7 @@ const AttractionConfirmationScreen = ({
           <div className="item-success-text-content-style">
             <h2 className="item-success-title-style">
               Success! You have added {items[parseInt(index, 10)].title} to your
-              itinerary on {months[parseInt(dateInfo.month)]} {dateInfo.day} for{" "}
+              itinerary on {months[parseInt(dateInfo.month)]} {dateInfo.day} at {createClockTime()} for{" "}
               {createMessage()}
             </h2>
           </div>

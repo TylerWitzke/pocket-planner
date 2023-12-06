@@ -29,13 +29,27 @@ const years = [
   ...Array.from({ length: 10 }, (_, i) => currentYear + i),
 ];
 
-const hours = ["Hours", ...Array.from({ length: 24 }, (_, i) => i + "hr")];
-const minutes = ["Minutes", ...Array.from({ length: 60 }, (_, i) => i + "min")];
+const hours = ["Hours", ...Array.from({ length: 24 }, (_, i) => i)];
+const minutes = ["Minutes", ...Array.from({ length: 60 }, (_, i) => i)];
+
+const durationhours = ["Hours", ...Array.from({ length: 24 }, (_, i) => i)];
+const durationminutes = ["Minutes", ...Array.from({ length: 60 }, (_, i) => i)];
+
+// const hours = ["Hours", ...Array.from({ length: 24 }, (_, i) => i + "hr")];
+// const minutes = ["Minutes", ...Array.from({ length: 60 }, (_, i) => i + "min")];
+
+// const durationhours = ["Hours", ...Array.from({ length: 24 }, (_, i) => i + "hr")];
+// const durationminutes = ["Minutes", ...Array.from({ length: 60 }, (_, i) => i + "min")];
 
 export let dateInfo = {
   month: -1,
   day: -1,
   year: -1,
+  hour: "",
+  minute: "",
+};
+
+export let durationInfo = {
   hour: "",
   minute: "",
 };
@@ -46,6 +60,10 @@ const AddItem = ({ title, image }) => {
   const [year, setYear] = useState("");
   const [hour, setHours] = useState("");
   const [minute, setMinutes] = useState("");
+
+  const [durationhour, setDurationHours] = useState("");
+  const [durationminute, setDurationMinutes] = useState("");
+
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const index = queryParams.get("itemid");
@@ -62,6 +80,10 @@ const AddItem = ({ title, image }) => {
     dateInfo.year = parseInt(year, 10);
     dateInfo.hour = hour;
     dateInfo.minute = minute;
+
+    durationInfo.hour = durationhour
+    durationInfo.minute= durationminute
+
     console.log(dateInfo.month);
     navigate("/attractionconfirmation?itemid=" + index + "&page=" + page);
   };
@@ -92,17 +114,22 @@ const AddItem = ({ title, image }) => {
         <Dropdown title="Year" list={years} updateState={setYear} />
       </div>
 
-      <p>How long will you be at {items[parseInt(index, 10)].title}?</p>
-
       <div className="dropdown-group">
         <Dropdown title="Hours" list={hours} updateState={setHours} />
         <Dropdown title="Minutes" list={minutes} updateState={setMinutes} />
       </div>
 
+      <p>How long will you be at {items[parseInt(index, 10)].title}?</p>
+
+      <div className="dropdown-group">
+        <Dropdown title="Hours" list={durationhours} updateState={setDurationHours} />
+        <Dropdown title="Minutes" list={durationminutes} updateState={setDurationMinutes} />
+      </div>
+
       <GeneralButton
         label="Add Item"
         onClick={onSubmit}
-        paddingTop="140px"
+        paddingTop="50px"
         width="350px"
         height="55px"
         border="10px"

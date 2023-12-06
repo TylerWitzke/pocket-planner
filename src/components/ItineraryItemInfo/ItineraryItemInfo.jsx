@@ -31,7 +31,7 @@ const formatter = new Intl.DateTimeFormat('en-US', {
   hour: 'numeric',
   minute: 'numeric',
   second: 'numeric',
-  hour12: true,
+  hour12: false,
   timeZone: 'UTC', // Set to 'UTC' to omit time zone information
 });
 
@@ -62,11 +62,13 @@ if(item_type == "amenity"){
   item_to_display = amenitie_items_info[parseInt(item_id, 10)]
   is_event = false;
   item_to_display.date = formatter.format(amenitie_items[parseInt(item_id, 10)].date);
+  item_to_display.duration = amenitie_items[parseInt(item_id, 10)].duration.getHours() + " hour(s) and " + amenitie_items[parseInt(item_id, 10)].duration.getHours() + "min(s)";
 }
 if(item_type == "attraction"){
   item_to_display = attraction_items_info[parseInt(item_id, 10)]
   is_event = false;
   item_to_display.date = formatter.format(attraction_items[parseInt(item_id, 10)].date);
+  item_to_display.duration = attraction_items[parseInt(item_id, 10)].duration.getHours() + " hour(s) and " + attraction_items[parseInt(item_id, 10)].duration.getHours() + "min(s)";
 }
 
 const deleteItem = () => {
