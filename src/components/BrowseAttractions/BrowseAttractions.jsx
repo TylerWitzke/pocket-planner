@@ -22,6 +22,25 @@ const BrowseAttractions = () => {
     console.log(`Searching for: ${searchTerm}`);
   };
 
+  const [radioButtonValue, setRadioButtonValue] = useState('All');
+  const [searchValue, setSearchValue] = useState('')
+
+  const updateSearch = (value, key) => {
+    if (key ==='radio') {
+      const matchingEvents = (value === 'All' ? attraction_items : attraction_items.filter(item => item.type.includes(value)));
+      const matchingText = matchingEvents.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase()));
+      setItemArray(matchingText);
+      setRadioButtonValue(value);
+    }
+    else {
+      console.log(value)
+      const matchingEvents = (radioButtonValue === 'All' ? attraction_items : attraction_items.filter(item => item.type.includes(radioButtonValue)));
+      const matchingText = matchingEvents.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));
+      setItemArray(matchingText);
+      setSearchValue(value);
+    }
+  }
+
   return (
     <div>
       <a href="#" onClick={redirectBack}>
@@ -37,17 +56,13 @@ const BrowseAttractions = () => {
             { value: "popular", label: "Popular" },
           ]}
           onChange={(selectedOption) => {
-            if(selectedOption === "All") {
-              setItemArray(attraction_items);
-            } else {
-            const matchingEvents = attraction_items.filter(item => item.type.includes(selectedOption));
-            setItemArray(matchingEvents);
-          }
+            updateSearch(selectedOption, 'radio');
           }}
         />
         <SearchBar
           placeholder="Search for attractions..."
           onSearch={handleSearch}
+          onChange={updateSearch}
         />
         <Browse
           items={itemArray}

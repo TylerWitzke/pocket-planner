@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import "./BrowseEvents.css"; // Import the CSS file
 import SearchBar from "../SearchBar/SearchBar";
@@ -23,6 +23,27 @@ const BrowseEvents = () => {
     console.log(`Searching for: ${searchTerm}`);
   };
 
+  const [radioButtonValue, setRadioButtonValue] = useState('All');
+  const [searchValue, setSearchValue] = useState('')
+
+  const updateSearch = (value, key) => {
+    if (key ==='radio') {
+      const matchingEvents = (value === 'All' ? event_items : event_items.filter(item => item.type.includes(value)));
+      const matchingText = matchingEvents.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase()));
+      setItemArray(matchingText);
+      setRadioButtonValue(value);
+    }
+    else {
+      console.log(value)
+      const matchingEvents = (radioButtonValue === 'All' ? event_items : event_items.filter(item => item.type.includes(radioButtonValue)));
+      const matchingText = matchingEvents.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));
+      setItemArray(matchingText);
+      setSearchValue(value);
+    }
+  }
+
+
+
   return (
     <div>
       <a href="#" onClick={redirectBack}>
@@ -39,15 +60,10 @@ const BrowseEvents = () => {
             { value: "show", label: "Shows" },
           ]}
           onChange={(selectedOption) => {
-            if(selectedOption === "All") {
-              setItemArray(event_items);
-            } else {
-            const matchingEvents = event_items.filter(item => item.type.includes(selectedOption));
-            setItemArray(matchingEvents);
-          }
+            updateSearch(selectedOption, 'radio');
           }}
         />
-        <SearchBar placeholder="Search for events..." onSearch={handleSearch} />
+        <SearchBar placeholder="Search for events..." onSearch={handleSearch} onChange={updateSearch}/>
         <Browse
           items={itemArray}
           height={"550px"}

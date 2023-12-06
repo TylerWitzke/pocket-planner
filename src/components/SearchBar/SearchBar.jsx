@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 
-const SearchBar = ({ placeholder, onSearch }) => {
+const SearchBar = ({ placeholder, onSearch, onChange }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
+    onChange(e.target.value, 'search')
   };
 
   const handleSearch = (e) => {
